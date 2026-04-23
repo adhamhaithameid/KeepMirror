@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+message_file="$1"
+first_line="$(sed -n '1p' "$message_file" | tr -d '\r')"
+
+pattern='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9._-]+\))?(!)?: .+'
+
+if [[ ! "$first_line" =~ $pattern ]]; then
+  cat >&2 <<'MSG'
+Commit message must follow Conventional Commits.
+
+Expected:
+  type(scope): short summary
+
+Examples:
+  feat(menu): add quick duration picker
+  fix(settings): persist default duration correctly
+  chore(git): add tracked commit hooks
+MSG
+  exit 1
+fi

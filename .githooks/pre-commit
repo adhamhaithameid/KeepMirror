@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ "${ALLOW_LARGE_COMMIT:-0}" == "1" ]]; then
+  exit 0
+fi
+
+max_files="${MAX_COMMIT_FILES:-12}"
+max_changed_lines="${MAX_COMMIT_CHANGED_LINES:-240}"
+
+file_count="$(git diff --cached --name-only --diff-filter=ACMR | awk 'NF{c++} END{print c+0}')"
+changed_lines="$(git diff --cached --numstat | awk '{added+=$1; deleted+=$2} END{print added+deleted+0}')"
+
+if (( file_count > max_files )); then
+  cat >&2 <<MSG
+Commit blocked: $file_count staged files exceeds limit $max_files.
+Split into smaller commits, or bypass once with:
+  ALLOW_LARGE_COMMIT=1 git commit -m "..."
+MSG
+  exit 1
+fi
+
+if (( changed_lines > max_changed_lines )); then
+  cat >&2 <<MSG
+Commit blocked: $changed_lines changed lines exceeds limit $max_changed_lines.
+Split into smaller commits, or bypass once with:
+  ALLOW_LARGE_COMMIT=1 git commit -m "..."
+MSG
+  exit 1
+fi
