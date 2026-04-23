@@ -63,18 +63,13 @@ build_with_swiftc() {
   mkdir -p "$SWIFT_BUILD_DIR"
 
   # Build KeepMirrorHelper (command-line tool)
-  # Note: CoreHID is Apple Silicon-only and not actually imported by the
-  # helper; avoid linking it so the build succeeds on Intel Macs too.
   xcrun swiftc \
     -parse-as-library \
     -sdk "$SDKROOT" \
     -target "$TRIPLE" \
     -o "$HELPER_BINARY" \
     "$ROOT_DIR/KeepMirrorHelper/main.swift" \
-    $(find "$ROOT_DIR/KeepMirror/Models" -name '*.swift' | sort) \
-    "$ROOT_DIR/KeepMirror/Support/AppError.swift" \
-    "$ROOT_DIR/KeepMirror/Services/BuiltInInputControlling.swift" \
-    "$ROOT_DIR/KeepMirror/Services/LiveBuiltInInputController.swift"
+    $(find "$ROOT_DIR/KeepMirror/Models" -name '*.swift' | sort)
 
   # Build main app
   xcrun swiftc \
@@ -127,10 +122,6 @@ build_with_swiftc() {
   <string>13.0</string>
   <key>NSPrincipalClass</key>
   <string>NSApplication</string>
-  <key>NSAccessibilityUsageDescription</key>
-  <string>KeepMirror needs Accessibility access to intercept and suppress built-in keyboard events during cleaning sessions.</string>
-  <key>NSInputMonitoringUsageDescription</key>
-  <string>KeepMirror needs Input Monitoring access to temporarily disable the built-in trackpad during cleaning sessions.</string>
 </dict>
 </plist>
 PLIST

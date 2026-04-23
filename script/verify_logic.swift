@@ -2,50 +2,31 @@ import Foundation
 
 @main
 struct LogicChecks {
+    @MainActor
     static func main() {
-        let defaults = UserDefaults(suiteName: "KeepMirror.LogicChecks")!
-        defaults.removePersistentDomain(forName: "KeepMirror.LogicChecks")
+        let suiteName = "KeepMirror.LogicChecks"
+        let defaults = UserDefaults(suiteName: suiteName)!
+        defaults.removePersistentDomain(forName: suiteName)
 
-        let settings = AppSettings(userDefaults: defaults)
-        precondition(settings.fullCleanDurationSeconds == 60)
-        precondition(settings.autoStartKeyboardDisableOnLaunch == false)
+        let settings = AppSettings(store: defaults)
 
-        settings.fullCleanDurationSeconds = 999
-        precondition(settings.fullCleanDurationSeconds == 180)
+        precondition(settings.defaultDuration == .minutes(15))
+        precondition(settings.availableDurations.contains(.indefinite))
+        precondition(settings.sessionOptions.allowPowerNap == false)
+        precondition(settings.sessionOptions.allowDisplaySleep == false)
 
-        settings.autoStartKeyboardDisableOnLaunch = true
-        precondition(AppSettings(userDefaults: defaults).autoStartKeyboardDisableOnLaunch == true)
+        let custom = ActivationDuration(hours: 0, minutes: 45, seconds: 0)
+        settings.addDuration(custom)
+        settings.setDefaultDuration(custom.id)
+        settings.pin(custom.id)
 
-        let keyboardSnapshot = HIDDeviceSnapshot(
-            id: 1,
-            primaryUsage: .keyboard,
-            isBuiltIn: true,
-            transport: .spi,
-            productName: "Apple Internal Keyboard / Trackpad"
-        )
-        precondition(BuiltInDeviceMatcher.role(for: keyboardSnapshot) == .keyboard)
+        let reloaded = AppSettings(store: defaults)
+        precondition(reloaded.defaultDurationID == custom.id)
+        precondition(reloaded.availableDurations.contains(custom))
+        precondition(reloaded.pinnedDurationIDs.contains(custom.id))
 
-        let trackpadSnapshot = HIDDeviceSnapshot(
-            id: 2,
-            primaryUsage: .mouse,
-            isBuiltIn: true,
-            transport: .spi,
-            productName: "Apple Internal Keyboard / Trackpad"
-        )
-        precondition(BuiltInDeviceMatcher.role(for: trackpadSnapshot) == .trackpad)
-
-        let request = HelperLaunchRequest(target: .keyboardAndTrackpad, durationSeconds: 60, startedAt: Date(timeIntervalSince1970: 100))
-        let encoded = try! JSONEncoder().encode(request)
-        let decoded = try! JSONDecoder().decode(HelperLaunchRequest.self, from: encoded)
-        precondition(decoded == request)
-
-        var coordinator = LockStateCoordinator(clock: TestClock(now: Date(timeIntervalSince1970: 10)))
-        let manual = coordinator.beginManual(target: .keyboard, owner: .app)
-        precondition(manual.endsAt == nil)
-        let timed = coordinator.beginTimed(target: .keyboardAndTrackpad, durationSeconds: 20, owner: .helper)
-        precondition(timed.endsAt == Date(timeIntervalSince1970: 30))
-        coordinator.clear()
-        precondition(coordinator.currentSession == nil)
+        precondition(AppSettings.applyMagneticSnap(18) == 20)
+        precondition(AppSettings.applyMagneticSnap(63) == 63)
 
         print("Logic checks passed.")
     }
