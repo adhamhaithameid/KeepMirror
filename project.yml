@@ -39,6 +39,7 @@ targets:
       - path: KeepMirror/Services/LinkOpening.swift
       - path: KeepMirror/Services/NotificationManager.swift
       - path: KeepMirror/Services/PowerStatusProviding.swift
+      - path: KeepMirror/Services/SettingsStore.swift
       - path: KeepMirror/Services/SettingsWindowManager.swift
       - path: KeepMirror/Services/StatusItemController.swift
       - path: KeepMirror/Services/WakeAssertionController.swift

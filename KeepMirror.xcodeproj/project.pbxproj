@@ -21,6 +21,7 @@
 		72635820732ADC34FABA078D /* PowerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8A2AD59835B3CAA4864 /* PowerSnapshot.swift */; };
 		82AC693D51199F8A796F2E82 /* KeepMirrorHelper in Resources */ = {isa = PBXBuildFile; fileRef = 9AF578C0B546463043C83AC0 /* KeepMirrorHelper */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84BB3DC9CC009C4FEDC817A5 /* WakeAssertionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */; };
+		84DEAD05367FE29A7D444F7D /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A07803415E41702CDFED0 /* SettingsStore.swift */; };
 		85BF51CFE7A8D80658714615 /* AboutTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178AF5160E647D3661AD246C /* AboutTabView.swift */; };
 		865732628225EAB24A9C4130 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661F69BA644CBD28F79EF76 /* AppSettings.swift */; };
 		90FC544DAC84CA8AF39E6E24 /* KeepMirrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691115DA7020C88B2DE712C9 /* KeepMirrorController.swift */; };
@@ -92,6 +93,7 @@
 		94BAD010517E9F9FCFB5D44C /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		96C669DBED4E215F1EBB8891 /* FocusDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDetectionService.swift; sourceTree = "<group>"; };
 		9AF578C0B546463043C83AC0 /* KeepMirrorHelper */ = {isa = PBXFileReference; includeInIndex = 0; path = KeepMirrorHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49A07803415E41702CDFED0 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		A83821A36151A19B1DACD633 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
 		A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerStatusProviding.swift; sourceTree = "<group>"; };
 		AD75A3EC5F77DE57763BD1E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				BBF478022AE6F5CE23040257 /* LinkOpening.swift */,
 				5ED7154D1EBD5A8539959287 /* NotificationManager.swift */,
 				A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */,
+				A49A07803415E41702CDFED0 /* SettingsStore.swift */,
 				1CA4043287185FACEFD6A490 /* SettingsWindowManager.swift */,
 				4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */,
 				C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */,
@@ -453,6 +456,7 @@
 				72635820732ADC34FABA078D /* PowerSnapshot.swift in Sources */,
 				62FAD2DC20F005F00FA1360D /* PowerStatusProviding.swift in Sources */,
 				70EBB0A3B87FA120FDDFBBDD /* QuickActionsMenuView.swift in Sources */,
+				84DEAD05367FE29A7D444F7D /* SettingsStore.swift in Sources */,
 				69D58D6AB746A16FCF2DBA52 /* SettingsTabView.swift in Sources */,
 				0E9EEF7FEAA9674A5DC4A90A /* SettingsWindowManager.swift in Sources */,
 				D21EFE9174B65AAA33C1209E /* SettingsWindowView.swift in Sources */,
