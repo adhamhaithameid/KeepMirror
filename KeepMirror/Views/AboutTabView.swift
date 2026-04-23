@@ -35,31 +35,17 @@ struct AboutTabView: View {
                     ) {
                         controller.open(.repository)
                     }
-
-                    linkButton(
-                        title: "Donate",
-                        icon: "cup.and.saucer.fill",
-                        identifier: "about.donate"
-                    ) {
-                        controller.open(.donation)
-                    }
                 }
             }
 
             Spacer()
 
             VStack(spacing: 4) {
-                Button {
-                    controller.open(.profile)
-                } label: {
-                    Text("Made by Adham Haitham")
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundStyle(KeepMirrorPalette.blue)
-                }
-                .buttonStyle(.plain)
-                .accessibilityIdentifier("about.profile")
-
                 Text("Built with Swift & SwiftUI")
+                    .font(.system(size: 11))
+                    .foregroundStyle(KeepMirrorPalette.mutedInk.opacity(0.6))
+
+                Text("PolyForm Noncommercial")
                     .font(.system(size: 11))
                     .foregroundStyle(KeepMirrorPalette.mutedInk.opacity(0.6))
             }

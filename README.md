@@ -133,16 +133,6 @@ The only OS prompt you'll see otherwise is the standard login-item approval if y
 
 ---
 
-## Support the project
-
-If KeepMirror saves you time, consider buying me a coffee ☕
-
-<a href="https://buymeacoffee.com/adhamhaithameid">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" height="48" />
-</a>
-
----
-
 ## License
 
 Source-available under the [PolyForm Noncommercial 1.0.0](LICENSE.md) license.

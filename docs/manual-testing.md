@@ -58,5 +58,5 @@
 ## About
 
 1. Open the **About** tab.
-2. Confirm the GitHub and Donate buttons open the correct links.
+2. Confirm the GitHub button opens the project repository.
 3. Confirm no Quit button is present on this tab (only appears on Settings / Duration tabs).
