@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="KeepAwake"
+APP_NAME="KeepMirror"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PROJECT_PATH="$ROOT_DIR/KeepAwake.xcodeproj"
+PROJECT_PATH="$ROOT_DIR/KeepMirror.xcodeproj"
 DERIVED_DATA="$ROOT_DIR/.derived-data-release"
 RELEASE_DIR="$ROOT_DIR/release"
 DMG_ROOT="$RELEASE_DIR/.dmg-root"
-DMG_MOUNT="/private/tmp/KeepAwake-dmg-mount"
+DMG_MOUNT="/private/tmp/KeepMirror-dmg-mount"
 DMG_BACKGROUND="$DMG_ROOT/.background/installer-background.png"
 TEMP_DMG="$RELEASE_DIR/$APP_NAME-temp.dmg"
 BUILD_LOG="$RELEASE_DIR/release-build.log"
@@ -46,9 +46,9 @@ build_release_app() {
 
 verify_bundle_contents() {
   [[ -x "$RELEASE_APP/Contents/MacOS/$APP_NAME" ]]
-  [[ -x "$RELEASE_APP/Contents/Helpers/KeepAwakeHelper" ]]
+  [[ -x "$RELEASE_APP/Contents/Helpers/KeepMirrorHelper" ]]
   [[ -f "$RELEASE_APP/Contents/Resources/profile.png" ]]
-  [[ -f "$RELEASE_APP/Contents/Resources/KeepAwake.icns" ]]
+  [[ -f "$RELEASE_APP/Contents/Resources/KeepMirror.icns" ]]
 }
 
 create_dmg_background() {

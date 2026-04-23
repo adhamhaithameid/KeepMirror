@@ -1,6 +1,6 @@
 # Privacy
 
-KeepAwake runs locally on your Mac.
+KeepMirror runs locally on your Mac.
 
 ## What It Collects
 
@@ -16,7 +16,7 @@ The app does not collect, upload, sell, or share:
 
 ## What It Reads Locally
 
-KeepAwake stores your preferences locally, including:
+KeepMirror stores your preferences locally, including:
 
 - start at login
 - activate on launch

@@ -1,6 +1,6 @@
 # Permissions
 
-KeepAwake does **not** require Accessibility, Input Monitoring, or Screen Recording permissions.
+KeepMirror does **not** require Accessibility, Input Monitoring, or Screen Recording permissions.
 
 The app uses macOS power-management assertions to keep the system awake, which works without any of the high-privilege input-monitoring permissions some other utility apps need.
 
@@ -12,7 +12,7 @@ If you enable **Start at login**, macOS may show its normal background-item or l
 
 ### Battery And Power State
 
-If you enable battery-aware rules, KeepAwake reads:
+If you enable battery-aware rules, KeepMirror reads:
 
 - current battery percentage
 - Low Power Mode state

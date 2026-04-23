@@ -2,9 +2,9 @@
 set -euo pipefail
 
 MODE="${1:-run}"
-APP_NAME="KeepAwake"
+APP_NAME="KeepMirror"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PROJECT_PATH="$ROOT_DIR/KeepAwake.xcodeproj"
+PROJECT_PATH="$ROOT_DIR/KeepMirror.xcodeproj"
 DERIVED_DATA="$ROOT_DIR/.derived-data"
 DIST_DIR="$ROOT_DIR/dist"
 APP_BUNDLE="$DIST_DIR/$APP_NAME.app"
@@ -58,11 +58,11 @@ build_with_swiftc() {
   APP_RESOURCES="$APP_CONTENTS/Resources"
   INFO_PLIST="$APP_CONTENTS/Info.plist"
   APP_BINARY="$SWIFT_BUILD_DIR/$APP_NAME"
-  HELPER_BINARY="$SWIFT_BUILD_DIR/KeepAwakeHelper"
+  HELPER_BINARY="$SWIFT_BUILD_DIR/KeepMirrorHelper"
 
   mkdir -p "$SWIFT_BUILD_DIR"
 
-  # Build KeepAwakeHelper (command-line tool)
+  # Build KeepMirrorHelper (command-line tool)
   # Note: CoreHID is Apple Silicon-only and not actually imported by the
   # helper; avoid linking it so the build succeeds on Intel Macs too.
   xcrun swiftc \
@@ -70,11 +70,11 @@ build_with_swiftc() {
     -sdk "$SDKROOT" \
     -target "$TRIPLE" \
     -o "$HELPER_BINARY" \
-    "$ROOT_DIR/KeepAwakeHelper/main.swift" \
-    $(find "$ROOT_DIR/KeepAwake/Models" -name '*.swift' | sort) \
-    "$ROOT_DIR/KeepAwake/Support/AppError.swift" \
-    "$ROOT_DIR/KeepAwake/Services/BuiltInInputControlling.swift" \
-    "$ROOT_DIR/KeepAwake/Services/LiveBuiltInInputController.swift"
+    "$ROOT_DIR/KeepMirrorHelper/main.swift" \
+    $(find "$ROOT_DIR/KeepMirror/Models" -name '*.swift' | sort) \
+    "$ROOT_DIR/KeepMirror/Support/AppError.swift" \
+    "$ROOT_DIR/KeepMirror/Services/BuiltInInputControlling.swift" \
+    "$ROOT_DIR/KeepMirror/Services/LiveBuiltInInputController.swift"
 
   # Build main app
   xcrun swiftc \
@@ -83,19 +83,19 @@ build_with_swiftc() {
     -framework SwiftUI \
     -framework AppKit \
     -o "$APP_BINARY" \
-    $(find "$ROOT_DIR/KeepAwake" -name '*.swift' | sort)
+    $(find "$ROOT_DIR/KeepMirror" -name '*.swift' | sort)
 
   rm -rf "$APP_BUNDLE"
   mkdir -p "$APP_MACOS" "$APP_HELPERS" "$APP_RESOURCES"
   cp "$APP_BINARY" "$APP_MACOS/$APP_NAME"
-  cp "$HELPER_BINARY" "$APP_HELPERS/KeepAwakeHelper"
-  chmod +x "$APP_MACOS/$APP_NAME" "$APP_HELPERS/KeepAwakeHelper"
+  cp "$HELPER_BINARY" "$APP_HELPERS/KeepMirrorHelper"
+  chmod +x "$APP_MACOS/$APP_NAME" "$APP_HELPERS/KeepMirrorHelper"
 
   # Copy resources
-  cp "$ROOT_DIR/KeepAwake/Resources/profile.png" "$APP_RESOURCES/profile.png"
-  cp "$ROOT_DIR/KeepAwake/Resources/KeepAwake.icns" "$APP_RESOURCES/KeepAwake.icns"
-  if [[ -f "$ROOT_DIR/KeepAwake/Resources/brand-mark.png" ]]; then
-    cp "$ROOT_DIR/KeepAwake/Resources/brand-mark.png" "$APP_RESOURCES/brand-mark.png"
+  cp "$ROOT_DIR/KeepMirror/Resources/profile.png" "$APP_RESOURCES/profile.png"
+  cp "$ROOT_DIR/KeepMirror/Resources/KeepMirror.icns" "$APP_RESOURCES/KeepMirror.icns"
+  if [[ -f "$ROOT_DIR/KeepMirror/Resources/brand-mark.png" ]]; then
+    cp "$ROOT_DIR/KeepMirror/Resources/brand-mark.png" "$APP_RESOURCES/brand-mark.png"
   fi
 
   cat >"$INFO_PLIST" <<PLIST
@@ -108,9 +108,9 @@ build_with_swiftc() {
   <key>CFBundleExecutable</key>
   <string>$APP_NAME</string>
   <key>CFBundleIconFile</key>
-  <string>KeepAwake.icns</string>
+  <string>KeepMirror.icns</string>
   <key>CFBundleIdentifier</key>
-  <string>com.adhamhaithameid.keepawake</string>
+  <string>com.adhamhaithameid.keepmirror</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundleName</key>
@@ -128,15 +128,15 @@ build_with_swiftc() {
   <key>NSPrincipalClass</key>
   <string>NSApplication</string>
   <key>NSAccessibilityUsageDescription</key>
-  <string>KeepAwake needs Accessibility access to intercept and suppress built-in keyboard events during cleaning sessions.</string>
+  <string>KeepMirror needs Accessibility access to intercept and suppress built-in keyboard events during cleaning sessions.</string>
   <key>NSInputMonitoringUsageDescription</key>
-  <string>KeepAwake needs Input Monitoring access to temporarily disable the built-in trackpad during cleaning sessions.</string>
+  <string>KeepMirror needs Input Monitoring access to temporarily disable the built-in trackpad during cleaning sessions.</string>
 </dict>
 </plist>
 PLIST
 }
 
-if ! build_with_xcode 2>/tmp/keepawake-xcodebuild.err; then
+if ! build_with_xcode 2>/tmp/keepmirror-xcodebuild.err; then
   build_with_swiftc
 else
   APP_BINARY="$APP_BUNDLE/Contents/MacOS/$APP_NAME"
@@ -159,7 +159,7 @@ case "$MODE" in
     ;;
   --telemetry|telemetry)
     open_app
-    /usr/bin/log stream --info --style compact --predicate "subsystem == \"com.adhamhaithameid.keepawake\""
+    /usr/bin/log stream --info --style compact --predicate "subsystem == \"com.adhamhaithameid.keepmirror\""
     ;;
   --verify|verify)
     open_app

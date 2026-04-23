@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="KeepAwake"
+APP_NAME="KeepMirror"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PROJECT_PATH="$ROOT_DIR/KeepAwake.xcodeproj"
+PROJECT_PATH="$ROOT_DIR/KeepMirror.xcodeproj"
 RESULT_DIR="$ROOT_DIR/.release-checks"
-RESULT_BUNDLE="$RESULT_DIR/KeepAwakeTests.xcresult"
+RESULT_BUNDLE="$RESULT_DIR/KeepMirrorTests.xcresult"
 TEST_LOG="$RESULT_DIR/unit-tests.log"
 SUMMARY_PATH="$RESULT_DIR/summary.txt"
 MAX_BUNDLE_MB="${MAX_BUNDLE_MB:-20}"
@@ -41,7 +41,7 @@ run_unit_tests() {
     -project "$PROJECT_PATH" \
     -scheme "$APP_NAME" \
     -destination 'platform=macOS' \
-    -only-testing:KeepAwakeTests \
+    -only-testing:KeepMirrorTests \
     -resultBundlePath "$RESULT_BUNDLE" \
     test >"$TEST_LOG" 2>&1 || {
       tail -n 200 "$TEST_LOG" >&2
@@ -64,12 +64,12 @@ verify_release_app_footprint() {
   local network_socket_count
 
   [[ -x "$release_app/Contents/MacOS/$APP_NAME" ]]
-  [[ -x "$release_app/Contents/Helpers/KeepAwakeHelper" ]]
+  [[ -x "$release_app/Contents/Helpers/KeepMirrorHelper" ]]
   [[ -f "$release_app/Contents/Resources/profile.png" ]]
-  [[ -f "$release_app/Contents/Resources/KeepAwake.icns" ]]
+  [[ -f "$release_app/Contents/Resources/KeepMirror.icns" ]]
   [[ -f "$release_app/Contents/Resources/brand-mark.png" ]]
   icon_file="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIconFile' "$release_app/Contents/Info.plist")"
-  [[ "$icon_file" == "KeepAwake.icns" ]]
+  [[ "$icon_file" == "KeepMirror.icns" ]]
   /usr/bin/codesign --verify --deep --strict "$release_app"
 
   bundle_kb="$(du -sk "$release_app" | awk '{ print $1 }')"

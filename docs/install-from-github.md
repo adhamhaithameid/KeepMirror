@@ -2,15 +2,15 @@
 
 ## 1. Download
 
-Download the latest `KeepAwake` release from GitHub.
+Download the latest `KeepMirror` release from GitHub.
 
 ## 2. Move To Applications
 
-Drag `KeepAwake.app` into your Applications folder.
+Drag `KeepMirror.app` into your Applications folder.
 
 ## 3. Open The App
 
-Open `KeepAwake.app` once. The app runs as a menu bar utility, so look for the coffee cup icon in the menu bar.
+Open `KeepMirror.app` once. The app runs as a menu bar utility, so look for the coffee cup icon in the menu bar.
 
 ## 4. Start A Session
 
@@ -31,6 +31,6 @@ Open **Settings** if you want to:
 
 If macOS shows an unsigned-app warning:
 
-1. Right-click `KeepAwake.app`
+1. Right-click `KeepMirror.app`
 2. Choose **Open**
 3. Confirm **Open**

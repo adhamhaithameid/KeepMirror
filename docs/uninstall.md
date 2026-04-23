@@ -2,8 +2,8 @@
 
 ## Remove The App
 
-1. Quit KeepAwake from the menu bar.
-2. Move `KeepAwake.app` to the Trash.
+1. Quit KeepMirror from the menu bar.
+2. Move `KeepMirror.app` to the Trash.
 
 ## Optional Cleanup
 

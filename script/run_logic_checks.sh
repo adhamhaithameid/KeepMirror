@@ -13,6 +13,6 @@ xcrun swiftc \
   -target arm64-apple-macos13.0 \
   -o "$TMP_DIR/logic-checks" \
   "$ROOT_DIR/script/verify_logic.swift" \
-  $(find "$ROOT_DIR/KeepAwake/Models" -name '*.swift' | sort)
+  $(find "$ROOT_DIR/KeepMirror/Models" -name '*.swift' | sort)
 
 "$TMP_DIR/logic-checks"

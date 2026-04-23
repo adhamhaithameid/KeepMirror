@@ -1,4 +1,4 @@
-name: KeepAwake
+name: KeepMirror
 
 options:
   createIntermediateGroups: true
@@ -19,56 +19,56 @@ settings:
     MACOSX_DEPLOYMENT_TARGET: "13.0"
 
 targets:
-  KeepAwake:
+  KeepMirror:
     type: application
     platform: macOS
     deploymentTarget: "13.0"
     sources:
-      - path: KeepAwake/App/main.swift
-      - path: KeepAwake/App/AppDelegate.swift
-      - path: KeepAwake/App/AppEnvironment.swift
-      - path: KeepAwake/App/KeepAwakeController.swift
-      - path: KeepAwake/Models/ActivationDuration.swift
-      - path: KeepAwake/Models/ActivationSession.swift
-      - path: KeepAwake/Models/AppSettings.swift
-      - path: KeepAwake/Models/PowerSnapshot.swift
-      - path: KeepAwake/Services/ActivationSessionController.swift
-      - path: KeepAwake/Services/BatteryMonitor.swift
-      - path: KeepAwake/Services/FocusDetectionService.swift
-      - path: KeepAwake/Services/LaunchAtLoginManager.swift
-      - path: KeepAwake/Services/LinkOpening.swift
-      - path: KeepAwake/Services/NotificationManager.swift
-      - path: KeepAwake/Services/PowerStatusProviding.swift
-      - path: KeepAwake/Services/SettingsWindowManager.swift
-      - path: KeepAwake/Services/StatusItemController.swift
-      - path: KeepAwake/Services/WakeAssertionController.swift
-      - path: KeepAwake/Views/AboutTabView.swift
-      - path: KeepAwake/Views/ActivationDurationTabView.swift
-      - path: KeepAwake/Views/AddDurationSheet.swift
-      - path: KeepAwake/Views/KeepAwakeBranding.swift
-      - path: KeepAwake/Views/OnboardingView.swift
-      - path: KeepAwake/Views/QuickActionsMenuView.swift
-      - path: KeepAwake/Views/SettingsTabView.swift
-      - path: KeepAwake/Views/SettingsWindowView.swift
-      - path: KeepAwake/Support/AppTab.swift
-      - path: KeepAwake/Support/ExternalLinks.swift
+      - path: KeepMirror/App/main.swift
+      - path: KeepMirror/App/AppDelegate.swift
+      - path: KeepMirror/App/AppEnvironment.swift
+      - path: KeepMirror/App/KeepMirrorController.swift
+      - path: KeepMirror/Models/ActivationDuration.swift
+      - path: KeepMirror/Models/ActivationSession.swift
+      - path: KeepMirror/Models/AppSettings.swift
+      - path: KeepMirror/Models/PowerSnapshot.swift
+      - path: KeepMirror/Services/ActivationSessionController.swift
+      - path: KeepMirror/Services/BatteryMonitor.swift
+      - path: KeepMirror/Services/FocusDetectionService.swift
+      - path: KeepMirror/Services/LaunchAtLoginManager.swift
+      - path: KeepMirror/Services/LinkOpening.swift
+      - path: KeepMirror/Services/NotificationManager.swift
+      - path: KeepMirror/Services/PowerStatusProviding.swift
+      - path: KeepMirror/Services/SettingsWindowManager.swift
+      - path: KeepMirror/Services/StatusItemController.swift
+      - path: KeepMirror/Services/WakeAssertionController.swift
+      - path: KeepMirror/Views/AboutTabView.swift
+      - path: KeepMirror/Views/ActivationDurationTabView.swift
+      - path: KeepMirror/Views/AddDurationSheet.swift
+      - path: KeepMirror/Views/KeepMirrorBranding.swift
+      - path: KeepMirror/Views/OnboardingView.swift
+      - path: KeepMirror/Views/QuickActionsMenuView.swift
+      - path: KeepMirror/Views/SettingsTabView.swift
+      - path: KeepMirror/Views/SettingsWindowView.swift
+      - path: KeepMirror/Support/AppTab.swift
+      - path: KeepMirror/Support/ExternalLinks.swift
     resources:
-      - path: KeepAwake/Resources/profile.png
-      - path: KeepAwake/Resources/KeepAwake.icns
-      - path: KeepAwake/Resources/brand-mark.png
-      - path: KeepAwake/Resources/Assets.xcassets
+      - path: KeepMirror/Resources/profile.png
+      - path: KeepMirror/Resources/KeepMirror.icns
+      - path: KeepMirror/Resources/brand-mark.png
+      - path: KeepMirror/Resources/Assets.xcassets
     info:
-      path: KeepAwake/Info.plist
+      path: KeepMirror/Info.plist
     settings:
       base:
-        INFOPLIST_KEY_CFBundleIconFile: KeepAwake.icns
-        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepawake
-        PRODUCT_NAME: KeepAwake
+        INFOPLIST_KEY_CFBundleIconFile: KeepMirror.icns
+        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepmirror
+        PRODUCT_NAME: KeepMirror
         ENABLE_HARDENED_RUNTIME: YES
-        CODE_SIGN_ENTITLEMENTS: KeepAwake/KeepAwake.entitlements
+        CODE_SIGN_ENTITLEMENTS: KeepMirror/KeepMirror.entitlements
         CODE_SIGN_STYLE: Automatic
     dependencies:
-      - target: KeepAwakeHelper
+      - target: KeepMirrorHelper
     postBuildScripts:
       - name: Copy App Resources
         script: |
@@ -76,82 +76,82 @@ targets:
           DEST="$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Resources"
           PLIST="$TARGET_BUILD_DIR/$INFOPLIST_PATH"
           mkdir -p "$DEST"
-          cp "$SRCROOT/KeepAwake/Resources/profile.png" "$DEST/profile.png"
-          cp "$SRCROOT/KeepAwake/Resources/KeepAwake.icns" "$DEST/KeepAwake.icns"
-          cp "$SRCROOT/KeepAwake/Resources/brand-mark.png" "$DEST/brand-mark.png"
+          cp "$SRCROOT/KeepMirror/Resources/profile.png" "$DEST/profile.png"
+          cp "$SRCROOT/KeepMirror/Resources/KeepMirror.icns" "$DEST/KeepMirror.icns"
+          cp "$SRCROOT/KeepMirror/Resources/brand-mark.png" "$DEST/brand-mark.png"
           if /usr/libexec/PlistBuddy -c "Print :CFBundleIconFile" "$PLIST" >/dev/null 2>&1; then
-            /usr/libexec/PlistBuddy -c "Set :CFBundleIconFile KeepAwake.icns" "$PLIST"
+            /usr/libexec/PlistBuddy -c "Set :CFBundleIconFile KeepMirror.icns" "$PLIST"
           else
-            /usr/libexec/PlistBuddy -c "Add :CFBundleIconFile string KeepAwake.icns" "$PLIST"
+            /usr/libexec/PlistBuddy -c "Add :CFBundleIconFile string KeepMirror.icns" "$PLIST"
           fi
         outputFiles:
           - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/profile.png
-          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/KeepAwake.icns
+          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/KeepMirror.icns
           - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/brand-mark.png
       - name: Embed Helper
         script: |
           set -euo pipefail
           DEST="$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Helpers"
           mkdir -p "$DEST"
-          cp "$BUILT_PRODUCTS_DIR/KeepAwakeHelper" "$DEST/KeepAwakeHelper"
-          chmod +x "$DEST/KeepAwakeHelper"
+          cp "$BUILT_PRODUCTS_DIR/KeepMirrorHelper" "$DEST/KeepMirrorHelper"
+          chmod +x "$DEST/KeepMirrorHelper"
         outputFiles:
-          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Helpers/KeepAwakeHelper
+          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Helpers/KeepMirrorHelper
 
-  KeepAwakeHelper:
+  KeepMirrorHelper:
     type: tool
     platform: macOS
     deploymentTarget: "13.0"
     sources:
-      - path: KeepAwakeHelper/main.swift
+      - path: KeepMirrorHelper/main.swift
     settings:
       base:
         OTHER_SWIFT_FLAGS: -parse-as-library
-        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepawake.helper
-        PRODUCT_NAME: KeepAwakeHelper
+        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepmirror.helper
+        PRODUCT_NAME: KeepMirrorHelper
         ENABLE_HARDENED_RUNTIME: YES
-        CODE_SIGN_ENTITLEMENTS: KeepAwakeHelper/KeepAwakeHelper.entitlements
+        CODE_SIGN_ENTITLEMENTS: KeepMirrorHelper/KeepMirrorHelper.entitlements
         CODE_SIGN_STYLE: Automatic
 
-  KeepAwakeTests:
+  KeepMirrorTests:
     type: bundle.unit-test
     platform: macOS
     deploymentTarget: "13.0"
     sources:
-      - path: KeepAwakeTests/ActivationDurationTests.swift
-      - path: KeepAwakeTests/ActivationSessionControllerTests.swift
-      - path: KeepAwakeTests/AppSettingsTests.swift
-      - path: KeepAwakeTests/KeepAwakeControllerTests.swift
+      - path: KeepMirrorTests/ActivationDurationTests.swift
+      - path: KeepMirrorTests/ActivationSessionControllerTests.swift
+      - path: KeepMirrorTests/AppSettingsTests.swift
+      - path: KeepMirrorTests/KeepMirrorControllerTests.swift
     dependencies:
-      - target: KeepAwake
+      - target: KeepMirror
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
-        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepawake.tests
-        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/KeepAwake.app/Contents/MacOS/KeepAwake"
+        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepmirror.tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/KeepMirror.app/Contents/MacOS/KeepMirror"
         BUNDLE_LOADER: "$(TEST_HOST)"
 
-  KeepAwakeUITests:
+  KeepMirrorUITests:
     type: bundle.ui-testing
     platform: macOS
     deploymentTarget: "13.0"
     sources:
-      - path: KeepAwakeUITests/KeepAwakeUITests.swift
+      - path: KeepMirrorUITests/KeepMirrorUITests.swift
     dependencies:
-      - target: KeepAwake
+      - target: KeepMirror
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
-        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepawake.uitests
+        PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepmirror.uitests
 
 schemes:
-  KeepAwake:
+  KeepMirror:
     build:
       targets:
-        KeepAwake: all
-        KeepAwakeHelper: run
+        KeepMirror: all
+        KeepMirrorHelper: run
     test:
       gatherCoverageData: true
       targets:
-        - name: KeepAwakeTests
-        - name: KeepAwakeUITests
+        - name: KeepMirrorTests
+        - name: KeepMirrorUITests

@@ -2,7 +2,7 @@
 
 ## Menu Bar Basics
 
-1. Launch `KeepAwake.app`.
+1. Launch `KeepMirror.app`.
 2. Confirm the coffee icon appears in the menu bar.
 3. **Left-click** the icon — icon switches to filled (active) state.
 4. Left-click again — icon returns to outline (inactive) state.
@@ -21,7 +21,7 @@
 4. Confirm quick buttons show the 3 pinned durations (default: `15m`, `1h`, `∞`).
 5. Confirm **Activate for Duration** opens a submenu with non-pinned durations.
 6. Confirm **Settings…** (⌘,) opens the settings window.
-7. Confirm **Quit KeepAwake** (⌘Q) terminates the app.
+7. Confirm **Quit KeepMirror** (⌘Q) terminates the app.
 
 ## Settings Window
 
@@ -50,10 +50,10 @@
 
 1. With a session active, enable Low Power Mode — confirm:
    - Session stops immediately (< 2 s).
-   - A macOS notification "KeepAwake Stopped — Low Power Mode" appears.
+   - A macOS notification "KeepMirror Stopped — Low Power Mode" appears.
 2. Set battery threshold above current battery — start a session — confirm:
    - Session stops within 30 s.
-   - A macOS notification "KeepAwake Stopped — battery below threshold" appears.
+   - A macOS notification "KeepMirror Stopped — battery below threshold" appears.
 
 ## About
 

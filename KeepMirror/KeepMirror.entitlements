@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	    KeepMirror is NOT sandboxed so it can:
+	      1. Create IOPMAssertion to prevent system and display sleep
+	      2. Use ServiceManagement to register for launch-at-login
+	    Hardened Runtime is enabled in the build settings which is why this file exists.
+	-->
+	<key>com.apple.security.app-sandbox</key>
+	<false/>
+</dict>
+</plist>

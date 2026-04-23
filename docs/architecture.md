@@ -1,6 +1,6 @@
 # Architecture
 
-KeepAwake is a menu bar utility built around macOS power assertions.
+KeepMirror is a menu bar utility built around macOS power assertions.
 
 ## Core Pieces
 
@@ -14,7 +14,7 @@ Tracks the active session, runs a timed expiration task, and monitors power cond
 - A **30-second poll** for battery level and Low Power Mode.
 - A **reactive `NSProcessInfoPowerStateDidChange` notification observer** that reacts to Low Power Mode changes within milliseconds — no waiting for the next poll.
 
-When a session is stopped automatically the controller sets `lastStopReason` so `KeepAwakeController` can fire a system notification.
+When a session is stopped automatically the controller sets `lastStopReason` so `KeepMirrorController` can fire a system notification.
 
 ### `NotificationManager`
 
@@ -56,4 +56,4 @@ Creates one stable `NSHostingController` on init and reuses it for all subsequen
 
 ## Why No Special Permissions?
 
-KeepAwake does not intercept input devices. It only manages sleep prevention, which requires only native power-management APIs (no Accessibility or Input Monitoring entitlements needed).
+KeepMirror does not intercept input devices. It only manages sleep prevention, which requires only native power-management APIs (no Accessibility or Input Monitoring entitlements needed).

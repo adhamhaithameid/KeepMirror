@@ -1,6 +1,6 @@
 # Safety
 
-KeepAwake is intentionally conservative.
+KeepMirror is intentionally conservative.
 
 ## Battery-Aware Auto Stop
 

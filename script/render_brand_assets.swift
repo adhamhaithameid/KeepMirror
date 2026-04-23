@@ -5,13 +5,13 @@ import Foundation
 
 let arguments = CommandLine.arguments.dropFirst()
 let outputDirectory = URL(fileURLWithPath: arguments.first ?? FileManager.default.currentDirectoryPath)
-let sourceURL = URL(fileURLWithPath: arguments.dropFirst().first ?? "KeepAwake/Resources/brand-mark.png")
+let sourceURL = URL(fileURLWithPath: arguments.dropFirst().first ?? "KeepMirror/Resources/brand-mark.png")
 let iconSetDirectory = outputDirectory.appendingPathComponent("AppIcon.iconset", isDirectory: true)
 let markURL = outputDirectory.appendingPathComponent("brand-mark.png")
 
 guard let sourceImage = NSImage(contentsOf: sourceURL) else {
     throw NSError(
-        domain: "KeepAwakeBrand",
+        domain: "KeepMirrorBrand",
         code: 1,
         userInfo: [NSLocalizedDescriptionKey: "Unable to load source image at \(sourceURL.path)"]
     )
@@ -48,7 +48,7 @@ func writePNG(named fileName: String, size: CGFloat) throws {
         ),
         let graphicsContext = NSGraphicsContext(bitmapImageRep: bitmap)
     else {
-        throw NSError(domain: "KeepAwakeBrand", code: 2, userInfo: [NSLocalizedDescriptionKey: "Unable to create bitmap context"])
+        throw NSError(domain: "KeepMirrorBrand", code: 2, userInfo: [NSLocalizedDescriptionKey: "Unable to create bitmap context"])
     }
 
     let canvas = CGRect(origin: .zero, size: NSSize(width: size, height: size))
@@ -61,7 +61,7 @@ func writePNG(named fileName: String, size: CGFloat) throws {
     NSGraphicsContext.restoreGraphicsState()
 
     guard let png = bitmap.representation(using: .png, properties: [:]) else {
-        throw NSError(domain: "KeepAwakeBrand", code: 3, userInfo: [NSLocalizedDescriptionKey: "Unable to encode PNG"])
+        throw NSError(domain: "KeepMirrorBrand", code: 3, userInfo: [NSLocalizedDescriptionKey: "Unable to encode PNG"])
     }
 
     try png.write(to: iconSetDirectory.appendingPathComponent(fileName))

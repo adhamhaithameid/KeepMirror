@@ -39,7 +39,7 @@ shadow.shadowOffset = NSSize(width: 0, height: -8)
 shadow.shadowBlurRadius = 20
 shadow.set()
 
-let title = "Drag KeepAwake to Applications"
+let title = "Drag KeepMirror to Applications"
 let titleStyle = NSMutableParagraphStyle()
 titleStyle.alignment = .center
 let titleAttributes: [NSAttributedString.Key: Any] = [
@@ -49,7 +49,7 @@ let titleAttributes: [NSAttributedString.Key: Any] = [
 ]
 title.draw(in: NSRect(x: 100, y: 304, width: 500, height: 44), withAttributes: titleAttributes)
 
-let subtitle = "Then open the app from Applications. If macOS asks for approval, KeepAwake can open Privacy & Security for you."
+let subtitle = "Then open the app from Applications. If macOS asks for approval, KeepMirror can open Privacy & Security for you."
 let subtitleStyle = NSMutableParagraphStyle()
 subtitleStyle.alignment = .center
 subtitleStyle.lineBreakMode = .byWordWrapping
@@ -76,7 +76,7 @@ arrowPath.line(to: NSPoint(x: 402, y: 138))
 NSColor(calibratedRed: 0.11, green: 0.55, blue: 0.92, alpha: 0.7).setStroke()
 arrowPath.stroke()
 
-let leftCaption = "KeepAwake"
+let leftCaption = "KeepMirror"
 let rightCaption = "Applications"
 let captionAttributes: [NSAttributedString.Key: Any] = [
     .font: NSFont.systemFont(ofSize: 14, weight: .medium),

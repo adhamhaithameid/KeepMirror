@@ -3,8 +3,8 @@ import Foundation
 @main
 struct LogicChecks {
     static func main() {
-        let defaults = UserDefaults(suiteName: "KeepAwake.LogicChecks")!
-        defaults.removePersistentDomain(forName: "KeepAwake.LogicChecks")
+        let defaults = UserDefaults(suiteName: "KeepMirror.LogicChecks")!
+        defaults.removePersistentDomain(forName: "KeepMirror.LogicChecks")
 
         let settings = AppSettings(userDefaults: defaults)
         precondition(settings.fullCleanDurationSeconds == 60)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="KeepAwake"
+APP_NAME="KeepMirror"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RELEASE_DIR="$ROOT_DIR/release"
 DMG_ROOT="$RELEASE_DIR/.dmg-root"
@@ -62,7 +62,7 @@ sign_release_app() {
     --sign "$DEVELOPER_ID_APPLICATION" \
     --timestamp \
     --options runtime \
-    "$RELEASE_APP/Contents/Helpers/KeepAwakeHelper"
+    "$RELEASE_APP/Contents/Helpers/KeepMirrorHelper"
 
   /usr/bin/codesign \
     --force \

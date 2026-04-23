@@ -2,8 +2,8 @@
 
 ## The menu bar icon does not appear
 
-1. Quit KeepAwake if it is running.
-2. Reopen `KeepAwake.app`.
+1. Quit KeepMirror if it is running.
+2. Reopen `KeepMirror.app`.
 3. Check whether the app is hidden behind the menu bar notch or extra menu bar items.
 
 ## My Mac still goes to sleep
@@ -28,4 +28,4 @@ Either rule can end an active session automatically.
 
 ## The menu opens but the settings window does not appear
 
-Try choosing **Settings** again. If the window is already open behind other apps, macOS should bring it forward, but if it does not, quit and reopen KeepAwake.
+Try choosing **Settings** again. If the window is already open behind other apps, macOS should bring it forward, but if it does not, quit and reopen KeepMirror.
