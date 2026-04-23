@@ -7,7 +7,7 @@ final class AppSettingsTests: XCTestCase {
         let defaults = UserDefaults(suiteName: #function)!
         defaults.removePersistentDomain(forName: #function)
 
-        let settings = AppSettings(userDefaults: defaults)
+        let settings = AppSettings(store: defaults)
 
         XCTAssertEqual(settings.defaultDuration, .minutes(15))
     }
@@ -15,7 +15,7 @@ final class AppSettingsTests: XCTestCase {
     func test_custom_duration_can_be_added_and_selected_as_default() {
         let defaults = UserDefaults(suiteName: #function)!
         defaults.removePersistentDomain(forName: #function)
-        let settings = AppSettings(userDefaults: defaults)
+        let settings = AppSettings(store: defaults)
         let custom = ActivationDuration(hours: 0, minutes: 45, seconds: 0)
 
         settings.addDuration(custom)

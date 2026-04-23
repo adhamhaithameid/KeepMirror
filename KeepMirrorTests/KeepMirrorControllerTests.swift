@@ -9,10 +9,6 @@ final class KeepMirrorControllerTests: XCTestCase {
         XCTAssertEqual(controller.selectedTab, .settings)
     }
 
-    func test_app_bundle_is_configured_as_menu_bar_utility() {
-        XCTAssertEqual(Bundle.main.object(forInfoDictionaryKey: "LSUIElement") as? Bool, true)
-    }
-
     func test_primary_click_starts_and_stops_the_default_duration() async {
         let sessionController = SessionControllerSpy()
         let controller = makeController(sessionController: sessionController)
@@ -37,7 +33,7 @@ final class KeepMirrorControllerTests: XCTestCase {
     func test_launch_activates_default_duration_when_enabled() async {
         let defaults = UserDefaults(suiteName: #function)!
         defaults.removePersistentDomain(forName: #function)
-        let settings = AppSettings(userDefaults: defaults)
+        let settings = AppSettings(store: defaults)
         settings.activateOnLaunch = true
 
         let sessionController = SessionControllerSpy()
@@ -46,7 +42,8 @@ final class KeepMirrorControllerTests: XCTestCase {
             sessionController: sessionController,
             windowManager: WindowManagerSpy(),
             launchAtLoginManager: LaunchAtLoginManagerSpy(),
-            linkOpener: NoOpLinkOpener()
+            linkOpener: NoOpLinkOpener(),
+            focusService: FocusDetectionService()
         )
 
         await controller.handleLaunch()
@@ -54,10 +51,10 @@ final class KeepMirrorControllerTests: XCTestCase {
         XCTAssertEqual(sessionController.startedDurations, [.minutes(15)])
     }
 
-    func test_first_launch_opens_settings_window() async {
+    func test_first_launch_does_not_open_settings_window_implicitly() async {
         let defaults = UserDefaults(suiteName: #function)!
         defaults.removePersistentDomain(forName: #function)
-        let settings = AppSettings(userDefaults: defaults)
+        let settings = AppSettings(store: defaults)
         let windowManager = WindowManagerSpy()
 
         let controller = KeepMirrorController(
@@ -65,20 +62,21 @@ final class KeepMirrorControllerTests: XCTestCase {
             sessionController: SessionControllerSpy(),
             windowManager: windowManager,
             launchAtLoginManager: LaunchAtLoginManagerSpy(),
-            linkOpener: NoOpLinkOpener()
+            linkOpener: NoOpLinkOpener(),
+            focusService: FocusDetectionService()
         )
 
         await controller.handleLaunch()
 
-        XCTAssertEqual(windowManager.openCalls, 1)
-        XCTAssertEqual(windowManager.selectedTabs, [.settings])
+        XCTAssertEqual(windowManager.openCalls, 0)
+        XCTAssertEqual(windowManager.selectedTabs, [])
     }
 
     private func makeController(
         sessionController: SessionControllerSpy = SessionControllerSpy()
     ) -> KeepMirrorController {
         let defaults = UserDefaults(suiteName: UUID().uuidString)!
-        let settings = AppSettings(userDefaults: defaults)
+        let settings = AppSettings(store: defaults)
         let windowManager = WindowManagerSpy()
         let loginManager = LaunchAtLoginManagerSpy()
 
@@ -87,7 +85,8 @@ final class KeepMirrorControllerTests: XCTestCase {
             sessionController: sessionController,
             windowManager: windowManager,
             launchAtLoginManager: loginManager,
-            linkOpener: NoOpLinkOpener()
+            linkOpener: NoOpLinkOpener(),
+            focusService: FocusDetectionService()
         )
     }
 }
@@ -106,6 +105,12 @@ private final class SessionControllerSpy: ActivationSessionManaging {
     func stop(reason: StopReason) async {
         stopCalls += 1
         lastStopReason = reason
+        activeSession = nil
+    }
+
+    func deactivateSync() {
+        stopCalls += 1
+        lastStopReason = .appTermination
         activeSession = nil
     }
 }

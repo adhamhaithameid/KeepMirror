@@ -11,7 +11,7 @@ final class ActivationSessionControllerTests: XCTestCase {
         await controller.start(duration: .minutes(15), options: .default)
         await controller.start(duration: .hours(1), options: .default)
 
-        XCTAssertEqual(assertions.activations, [false, false])
+        XCTAssertEqual(assertions.activations.map(\.allowDisplaySleep), [false, false])
         XCTAssertEqual(controller.activeSession?.duration, .hours(1))
     }
 
@@ -22,7 +22,12 @@ final class ActivationSessionControllerTests: XCTestCase {
 
         await controller.start(
             duration: .minutes(30),
-            options: SessionOptions(allowDisplaySleep: false, batteryThreshold: nil, stopOnLowPowerMode: true)
+            options: SessionOptions(
+                allowDisplaySleep: false,
+                allowPowerNap: false,
+                batteryThreshold: nil,
+                stopOnLowPowerMode: true
+            )
         )
 
         XCTAssertNil(controller.activeSession)
@@ -36,19 +41,24 @@ final class ActivationSessionControllerTests: XCTestCase {
 
         await controller.start(
             duration: .hours(1),
-            options: SessionOptions(allowDisplaySleep: true, batteryThreshold: nil, stopOnLowPowerMode: false)
+            options: SessionOptions(
+                allowDisplaySleep: true,
+                allowPowerNap: false,
+                batteryThreshold: nil,
+                stopOnLowPowerMode: false
+            )
         )
 
-        XCTAssertEqual(assertions.activations, [true])
+        XCTAssertEqual(assertions.activations.map(\.allowDisplaySleep), [true])
     }
 }
 
 private final class WakeAssertionControllerSpy: WakeAssertionControlling {
-    var activations: [Bool] = []
+    var activations: [(allowDisplaySleep: Bool, allowPowerNap: Bool)] = []
     var deactivateCalls = 0
 
-    func activate(allowDisplaySleep: Bool) throws {
-        activations.append(allowDisplaySleep)
+    func activate(allowDisplaySleep: Bool, allowPowerNap: Bool) throws {
+        activations.append((allowDisplaySleep: allowDisplaySleep, allowPowerNap: allowPowerNap))
     }
 
     func deactivate() {
