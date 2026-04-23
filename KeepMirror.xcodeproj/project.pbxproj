@@ -1,0 +1,822 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ABCE24E9088F11DB1BCDA33 /* AddDurationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F671F9BAD79AC89E4444E5DA /* AddDurationSheet.swift */; };
+		0E9EEF7FEAA9674A5DC4A90A /* SettingsWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4043287185FACEFD6A490 /* SettingsWindowManager.swift */; };
+		230C6829ACBBD67E06A23807 /* KeepMirrorControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE948A4EF8C1E8532A7178 /* KeepMirrorControllerTests.swift */; };
+		26B8C7E0B34C44DCFB167457 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BAD010517E9F9FCFB5D44C /* AppTab.swift */; };
+		2FF8A605BD48E9BD1ED41AE4 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC5D6A7E08359296EDBF459 /* AppSettingsTests.swift */; };
+		519E721812B94D9B394ED864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243F105A0352CE1FE57AC88 /* AppDelegate.swift */; };
+		5DA252A8C1B2FA7274EB7D31 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F745ACB30F18FB9E76A56 /* AppEnvironment.swift */; };
+		5E876209B0CFD231E5F3DFB5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7154D1EBD5A8539959287 /* NotificationManager.swift */; };
+		62FAD2DC20F005F00FA1360D /* PowerStatusProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */; };
+		69D58D6AB746A16FCF2DBA52 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83821A36151A19B1DACD633 /* SettingsTabView.swift */; };
+		70EBB0A3B87FA120FDDFBBDD /* QuickActionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769E60B84DFE1227A69F530 /* QuickActionsMenuView.swift */; };
+		72635820732ADC34FABA078D /* PowerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8A2AD59835B3CAA4864 /* PowerSnapshot.swift */; };
+		82AC693D51199F8A796F2E82 /* KeepMirrorHelper in Resources */ = {isa = PBXBuildFile; fileRef = 9AF578C0B546463043C83AC0 /* KeepMirrorHelper */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84BB3DC9CC009C4FEDC817A5 /* WakeAssertionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */; };
+		85BF51CFE7A8D80658714615 /* AboutTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178AF5160E647D3661AD246C /* AboutTabView.swift */; };
+		865732628225EAB24A9C4130 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661F69BA644CBD28F79EF76 /* AppSettings.swift */; };
+		90FC544DAC84CA8AF39E6E24 /* KeepMirrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691115DA7020C88B2DE712C9 /* KeepMirrorController.swift */; };
+		A27D9005067CC7F5E9C76C5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B9086CFBFC202491F7628 /* main.swift */; };
+		A2A3064CAAE9A85FAB9A4980 /* FocusDetectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C669DBED4E215F1EBB8891 /* FocusDetectionService.swift */; };
+		A3BA6FD6589A4EDBE5F02885 /* ExternalLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A524858111AF342C4C37D /* ExternalLinks.swift */; };
+		A4DE188EAEA8AD74181EAE34 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75A3EC5F77DE57763BD1E8 /* main.swift */; };
+		AD82600C10DC4A448523EE56 /* LinkOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF478022AE6F5CE23040257 /* LinkOpening.swift */; };
+		AE2CE5F8EACFC8AC3532315E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E406577F587D6B393F52D /* OnboardingView.swift */; };
+		B16FC536EEE686DCA6C959EB /* ActivationSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67187224327D016F3800474B /* ActivationSessionController.swift */; };
+		C11985CB85A4E92775901AD2 /* BatteryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D980567F62B3AB427B6FA0 /* BatteryMonitor.swift */; };
+		C631DAEBA56AA871867ED33D /* ActivationDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68B43A0FC43A8FC83701951 /* ActivationDuration.swift */; };
+		CF63D677BFA7E120039C8D6B /* ActivationDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB656795DE2060719E82AB8 /* ActivationDurationTests.swift */; };
+		D21EFE9174B65AAA33C1209E /* SettingsWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */; };
+		D4DA3B2A00CE4CE5ED8171A6 /* ActivationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120769AB246D938E7E71908 /* ActivationSession.swift */; };
+		D860D2D293FE28F39B7B72F2 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */; };
+		DECA470CD36A7C8F953C38C8 /* LaunchAtLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48E2499CDD091C7E858225 /* LaunchAtLoginManager.swift */; };
+		E76E82614A0638417A468561 /* ActivationDurationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5979AC6FF169D3719E94B68 /* ActivationDurationTabView.swift */; };
+		FD8B385986951A95F462961C /* KeepMirrorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629E7A346EC83D187315B2F /* KeepMirrorUITests.swift */; };
+		FE7FF0529E1AE1191B7674A3 /* ActivationSessionControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EE910D152D505AEF9D725 /* ActivationSessionControllerTests.swift */; };
+		FFF73A75423DC0285690342C /* KeepMirrorBranding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7958E43C20F04A9F862AC855 /* KeepMirrorBranding.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A31F1F5DCF42A6C361504B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AB8CFB98BBAC8095FDCB1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA85E685F488D387E9E735E6;
+			remoteInfo = KeepMirror;
+		};
+		571FA4F512172F9C6EC78EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AB8CFB98BBAC8095FDCB1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D280E70D06C0F2140FC4D8D7;
+			remoteInfo = KeepMirrorHelper;
+		};
+		BE6E7DBFDC36F8B0CEA5849C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86AB8CFB98BBAC8095FDCB1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA85E685F488D387E9E735E6;
+			remoteInfo = KeepMirror;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EFDB8A2AD59835B3CAA4864 /* PowerSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerSnapshot.swift; sourceTree = "<group>"; };
+		178AF5160E647D3661AD246C /* AboutTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTabView.swift; sourceTree = "<group>"; };
+		1CA4043287185FACEFD6A490 /* SettingsWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowManager.swift; sourceTree = "<group>"; };
+		32F72AC388DF311B6DBC1C06 /* KeepMirror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepMirror.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44FE948A4EF8C1E8532A7178 /* KeepMirrorControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorControllerTests.swift; sourceTree = "<group>"; };
+		4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowView.swift; sourceTree = "<group>"; };
+		5629E7A346EC83D187315B2F /* KeepMirrorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorUITests.swift; sourceTree = "<group>"; };
+		5661F69BA644CBD28F79EF76 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		5828D2F92BA5CC6C167DB916 /* KeepMirrorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepMirrorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ED7154D1EBD5A8539959287 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		67187224327D016F3800474B /* ActivationSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationSessionController.swift; sourceTree = "<group>"; };
+		691115DA7020C88B2DE712C9 /* KeepMirrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorController.swift; sourceTree = "<group>"; };
+		6E8A524858111AF342C4C37D /* ExternalLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinks.swift; sourceTree = "<group>"; };
+		6FC5D6A7E08359296EDBF459 /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
+		751EE910D152D505AEF9D725 /* ActivationSessionControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationSessionControllerTests.swift; sourceTree = "<group>"; };
+		7958E43C20F04A9F862AC855 /* KeepMirrorBranding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorBranding.swift; sourceTree = "<group>"; };
+		7FB656795DE2060719E82AB8 /* ActivationDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationDurationTests.swift; sourceTree = "<group>"; };
+		8120769AB246D938E7E71908 /* ActivationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationSession.swift; sourceTree = "<group>"; };
+		8769E60B84DFE1227A69F530 /* QuickActionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsMenuView.swift; sourceTree = "<group>"; };
+		94BAD010517E9F9FCFB5D44C /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		96C669DBED4E215F1EBB8891 /* FocusDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDetectionService.swift; sourceTree = "<group>"; };
+		9AF578C0B546463043C83AC0 /* KeepMirrorHelper */ = {isa = PBXFileReference; includeInIndex = 0; path = KeepMirrorHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83821A36151A19B1DACD633 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
+		A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerStatusProviding.swift; sourceTree = "<group>"; };
+		AD75A3EC5F77DE57763BD1E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B2F32BD88A455D72F203E210 /* KeepMirrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepMirrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBF478022AE6F5CE23040257 /* LinkOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkOpening.swift; sourceTree = "<group>"; };
+		C01B9086CFBFC202491F7628 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeAssertionController.swift; sourceTree = "<group>"; };
+		C76F745ACB30F18FB9E76A56 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		D243F105A0352CE1FE57AC88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5979AC6FF169D3719E94B68 /* ActivationDurationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationDurationTabView.swift; sourceTree = "<group>"; };
+		D68B43A0FC43A8FC83701951 /* ActivationDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationDuration.swift; sourceTree = "<group>"; };
+		DD0E406577F587D6B393F52D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F3D980567F62B3AB427B6FA0 /* BatteryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMonitor.swift; sourceTree = "<group>"; };
+		F671F9BAD79AC89E4444E5DA /* AddDurationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDurationSheet.swift; sourceTree = "<group>"; };
+		FA48E2499CDD091C7E858225 /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2D84163CEDC562852BFA40D5 /* KeepMirrorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5629E7A346EC83D187315B2F /* KeepMirrorUITests.swift */,
+			);
+			path = KeepMirrorUITests;
+			sourceTree = "<group>";
+		};
+		57A7650749F1F29E4F8AEDC0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				94BAD010517E9F9FCFB5D44C /* AppTab.swift */,
+				6E8A524858111AF342C4C37D /* ExternalLinks.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5ACB5149E46A87F78932CDCE /* KeepMirrorHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AD75A3EC5F77DE57763BD1E8 /* main.swift */,
+			);
+			path = KeepMirrorHelper;
+			sourceTree = "<group>";
+		};
+		67D79F579EC391B63697C593 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32F72AC388DF311B6DBC1C06 /* KeepMirror.app */,
+				9AF578C0B546463043C83AC0 /* KeepMirrorHelper */,
+				B2F32BD88A455D72F203E210 /* KeepMirrorTests.xctest */,
+				5828D2F92BA5CC6C167DB916 /* KeepMirrorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		740727386091FBCD582BF5F8 = {
+			isa = PBXGroup;
+			children = (
+				A945D0B442601065B0B4C2E7 /* KeepMirror */,
+				5ACB5149E46A87F78932CDCE /* KeepMirrorHelper */,
+				9623B0D879195AB5796C5C04 /* KeepMirrorTests */,
+				2D84163CEDC562852BFA40D5 /* KeepMirrorUITests */,
+				67D79F579EC391B63697C593 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D31B08B80BCD5428590969E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D68B43A0FC43A8FC83701951 /* ActivationDuration.swift */,
+				8120769AB246D938E7E71908 /* ActivationSession.swift */,
+				5661F69BA644CBD28F79EF76 /* AppSettings.swift */,
+				0EFDB8A2AD59835B3CAA4864 /* PowerSnapshot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9623B0D879195AB5796C5C04 /* KeepMirrorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FB656795DE2060719E82AB8 /* ActivationDurationTests.swift */,
+				751EE910D152D505AEF9D725 /* ActivationSessionControllerTests.swift */,
+				6FC5D6A7E08359296EDBF459 /* AppSettingsTests.swift */,
+				44FE948A4EF8C1E8532A7178 /* KeepMirrorControllerTests.swift */,
+			);
+			path = KeepMirrorTests;
+			sourceTree = "<group>";
+		};
+		A048893AB36C633C14B61D3F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D243F105A0352CE1FE57AC88 /* AppDelegate.swift */,
+				C76F745ACB30F18FB9E76A56 /* AppEnvironment.swift */,
+				691115DA7020C88B2DE712C9 /* KeepMirrorController.swift */,
+				C01B9086CFBFC202491F7628 /* main.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A945D0B442601065B0B4C2E7 /* KeepMirror */ = {
+			isa = PBXGroup;
+			children = (
+				A048893AB36C633C14B61D3F /* App */,
+				7D31B08B80BCD5428590969E /* Models */,
+				BB363988834A624D428D8A70 /* Services */,
+				57A7650749F1F29E4F8AEDC0 /* Support */,
+				E4133636A0C003E8BCDBA304 /* Views */,
+			);
+			path = KeepMirror;
+			sourceTree = "<group>";
+		};
+		BB363988834A624D428D8A70 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				67187224327D016F3800474B /* ActivationSessionController.swift */,
+				F3D980567F62B3AB427B6FA0 /* BatteryMonitor.swift */,
+				96C669DBED4E215F1EBB8891 /* FocusDetectionService.swift */,
+				FA48E2499CDD091C7E858225 /* LaunchAtLoginManager.swift */,
+				BBF478022AE6F5CE23040257 /* LinkOpening.swift */,
+				5ED7154D1EBD5A8539959287 /* NotificationManager.swift */,
+				A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */,
+				1CA4043287185FACEFD6A490 /* SettingsWindowManager.swift */,
+				4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */,
+				C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E4133636A0C003E8BCDBA304 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				178AF5160E647D3661AD246C /* AboutTabView.swift */,
+				D5979AC6FF169D3719E94B68 /* ActivationDurationTabView.swift */,
+				F671F9BAD79AC89E4444E5DA /* AddDurationSheet.swift */,
+				7958E43C20F04A9F862AC855 /* KeepMirrorBranding.swift */,
+				DD0E406577F587D6B393F52D /* OnboardingView.swift */,
+				8769E60B84DFE1227A69F530 /* QuickActionsMenuView.swift */,
+				A83821A36151A19B1DACD633 /* SettingsTabView.swift */,
+				540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B00F8D69D2971A942E0FE95 /* KeepMirrorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31685A1A94FC2C0F143DFAC3 /* Build configuration list for PBXNativeTarget "KeepMirrorTests" */;
+			buildPhases = (
+				138AF0ED41555FE836EAA71E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D229D06691CAC25C82AED158 /* PBXTargetDependency */,
+			);
+			name = KeepMirrorTests;
+			packageProductDependencies = (
+			);
+			productName = KeepMirrorTests;
+			productReference = B2F32BD88A455D72F203E210 /* KeepMirrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D280E70D06C0F2140FC4D8D7 /* KeepMirrorHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0986D49D25EF93381CD36D9E /* Build configuration list for PBXNativeTarget "KeepMirrorHelper" */;
+			buildPhases = (
+				72C3E165713A1681B1A826BB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeepMirrorHelper;
+			packageProductDependencies = (
+			);
+			productName = KeepMirrorHelper;
+			productReference = 9AF578C0B546463043C83AC0 /* KeepMirrorHelper */;
+			productType = "com.apple.product-type.tool";
+		};
+		F2A96E4C0B8BA80CB3E10EA8 /* KeepMirrorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AF433FE974E96EB915497E9 /* Build configuration list for PBXNativeTarget "KeepMirrorUITests" */;
+			buildPhases = (
+				32FCF113CF8AAD8F330E297A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A743D240C4B5A7EFF0DC78F5 /* PBXTargetDependency */,
+			);
+			name = KeepMirrorUITests;
+			packageProductDependencies = (
+			);
+			productName = KeepMirrorUITests;
+			productReference = 5828D2F92BA5CC6C167DB916 /* KeepMirrorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		FA85E685F488D387E9E735E6 /* KeepMirror */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4B0CC22FBA8D635054A2774 /* Build configuration list for PBXNativeTarget "KeepMirror" */;
+			buildPhases = (
+				35EEE74D525B6D2848CB194C /* Sources */,
+				A124433C5B1A95618C3EBF9B /* Resources */,
+				0B8DEFA9B30824F02D8135A0 /* Copy App Resources */,
+				64AF50A6EAFA87A20DAE0364 /* Embed Helper */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9B02C47A208512DB0EA5F73 /* PBXTargetDependency */,
+			);
+			name = KeepMirror;
+			packageProductDependencies = (
+			);
+			productName = KeepMirror;
+			productReference = 32F72AC388DF311B6DBC1C06 /* KeepMirror.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86AB8CFB98BBAC8095FDCB1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D280E70D06C0F2140FC4D8D7 = {
+						ProvisioningStyle = Automatic;
+					};
+					F2A96E4C0B8BA80CB3E10EA8 = {
+						TestTargetID = FA85E685F488D387E9E735E6;
+					};
+					FA85E685F488D387E9E735E6 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2EA58268B73BE36786C5074F /* Build configuration list for PBXProject "KeepMirror" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 740727386091FBCD582BF5F8;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 67D79F579EC391B63697C593 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA85E685F488D387E9E735E6 /* KeepMirror */,
+				D280E70D06C0F2140FC4D8D7 /* KeepMirrorHelper */,
+				3B00F8D69D2971A942E0FE95 /* KeepMirrorTests */,
+				F2A96E4C0B8BA80CB3E10EA8 /* KeepMirrorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A124433C5B1A95618C3EBF9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82AC693D51199F8A796F2E82 /* KeepMirrorHelper in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B8DEFA9B30824F02D8135A0 /* Copy App Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy App Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/profile.png",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/KeepMirror.icns",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/brand-mark.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\nDEST=\"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Resources\"\nPLIST=\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nmkdir -p \"$DEST\"\ncp \"$SRCROOT/KeepMirror/Resources/profile.png\" \"$DEST/profile.png\"\ncp \"$SRCROOT/KeepMirror/Resources/KeepMirror.icns\" \"$DEST/KeepMirror.icns\"\ncp \"$SRCROOT/KeepMirror/Resources/brand-mark.png\" \"$DEST/brand-mark.png\"\nif /usr/libexec/PlistBuddy -c \"Print :CFBundleIconFile\" \"$PLIST\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Set :CFBundleIconFile KeepMirror.icns\" \"$PLIST\"\nelse\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleIconFile string KeepMirror.icns\" \"$PLIST\"\nfi\n";
+		};
+		64AF50A6EAFA87A20DAE0364 /* Embed Helper */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Helper";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Helpers/KeepMirrorHelper",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\nDEST=\"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Helpers\"\nmkdir -p \"$DEST\"\ncp \"$BUILT_PRODUCTS_DIR/KeepMirrorHelper\" \"$DEST/KeepMirrorHelper\"\nchmod +x \"$DEST/KeepMirrorHelper\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		138AF0ED41555FE836EAA71E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF63D677BFA7E120039C8D6B /* ActivationDurationTests.swift in Sources */,
+				FE7FF0529E1AE1191B7674A3 /* ActivationSessionControllerTests.swift in Sources */,
+				2FF8A605BD48E9BD1ED41AE4 /* AppSettingsTests.swift in Sources */,
+				230C6829ACBBD67E06A23807 /* KeepMirrorControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32FCF113CF8AAD8F330E297A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8B385986951A95F462961C /* KeepMirrorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35EEE74D525B6D2848CB194C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85BF51CFE7A8D80658714615 /* AboutTabView.swift in Sources */,
+				C631DAEBA56AA871867ED33D /* ActivationDuration.swift in Sources */,
+				E76E82614A0638417A468561 /* ActivationDurationTabView.swift in Sources */,
+				D4DA3B2A00CE4CE5ED8171A6 /* ActivationSession.swift in Sources */,
+				B16FC536EEE686DCA6C959EB /* ActivationSessionController.swift in Sources */,
+				0ABCE24E9088F11DB1BCDA33 /* AddDurationSheet.swift in Sources */,
+				519E721812B94D9B394ED864 /* AppDelegate.swift in Sources */,
+				5DA252A8C1B2FA7274EB7D31 /* AppEnvironment.swift in Sources */,
+				865732628225EAB24A9C4130 /* AppSettings.swift in Sources */,
+				26B8C7E0B34C44DCFB167457 /* AppTab.swift in Sources */,
+				C11985CB85A4E92775901AD2 /* BatteryMonitor.swift in Sources */,
+				A3BA6FD6589A4EDBE5F02885 /* ExternalLinks.swift in Sources */,
+				A2A3064CAAE9A85FAB9A4980 /* FocusDetectionService.swift in Sources */,
+				FFF73A75423DC0285690342C /* KeepMirrorBranding.swift in Sources */,
+				90FC544DAC84CA8AF39E6E24 /* KeepMirrorController.swift in Sources */,
+				DECA470CD36A7C8F953C38C8 /* LaunchAtLoginManager.swift in Sources */,
+				AD82600C10DC4A448523EE56 /* LinkOpening.swift in Sources */,
+				5E876209B0CFD231E5F3DFB5 /* NotificationManager.swift in Sources */,
+				AE2CE5F8EACFC8AC3532315E /* OnboardingView.swift in Sources */,
+				72635820732ADC34FABA078D /* PowerSnapshot.swift in Sources */,
+				62FAD2DC20F005F00FA1360D /* PowerStatusProviding.swift in Sources */,
+				70EBB0A3B87FA120FDDFBBDD /* QuickActionsMenuView.swift in Sources */,
+				69D58D6AB746A16FCF2DBA52 /* SettingsTabView.swift in Sources */,
+				0E9EEF7FEAA9674A5DC4A90A /* SettingsWindowManager.swift in Sources */,
+				D21EFE9174B65AAA33C1209E /* SettingsWindowView.swift in Sources */,
+				D860D2D293FE28F39B7B72F2 /* StatusItemController.swift in Sources */,
+				84BB3DC9CC009C4FEDC817A5 /* WakeAssertionController.swift in Sources */,
+				A27D9005067CC7F5E9C76C5A /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72C3E165713A1681B1A826BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4DE188EAEA8AD74181EAE34 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A743D240C4B5A7EFF0DC78F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA85E685F488D387E9E735E6 /* KeepMirror */;
+			targetProxy = BE6E7DBFDC36F8B0CEA5849C /* PBXContainerItemProxy */;
+		};
+		B9B02C47A208512DB0EA5F73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D280E70D06C0F2140FC4D8D7 /* KeepMirrorHelper */;
+			targetProxy = 571FA4F512172F9C6EC78EAE /* PBXContainerItemProxy */;
+		};
+		D229D06691CAC25C82AED158 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA85E685F488D387E9E735E6 /* KeepMirror */;
+			targetProxy = 1A31F1F5DCF42A6C361504B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14C4CEDDD903493CA5A0E357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		15314239B40430A074B15EA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeepMirrorHelper/KeepMirrorHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OTHER_SWIFT_FLAGS = "-parse-as-library";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.helper;
+				PRODUCT_NAME = KeepMirrorHelper;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		16B97E88F136BA2153D74E47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.uitests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = KeepMirror;
+			};
+			name = Debug;
+		};
+		4A70D41882935CA03DCDB2B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.uitests;
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = KeepMirror;
+			};
+			name = Release;
+		};
+		4E5BB43F71AC7986BE0D09A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KeepMirror/KeepMirror.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = KeepMirror/Info.plist;
+				INFOPLIST_KEY_CFBundleIconFile = KeepMirror.icns;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror;
+				PRODUCT_NAME = KeepMirror;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		638B6F1CEFD90128E4B740D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeepMirror.app/Contents/MacOS/KeepMirror";
+			};
+			name = Release;
+		};
+		B148FF0A0F5B4C4E77061877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeepMirror.app/Contents/MacOS/KeepMirror";
+			};
+			name = Debug;
+		};
+		C5C337E49EBE41BDC4FE6777 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeepMirrorHelper/KeepMirrorHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OTHER_SWIFT_FLAGS = "-parse-as-library";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.helper;
+				PRODUCT_NAME = KeepMirrorHelper;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DF64258FF0C4D71F7ED76BDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KeepMirror/KeepMirror.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = KeepMirror/Info.plist;
+				INFOPLIST_KEY_CFBundleIconFile = KeepMirror.icns;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror;
+				PRODUCT_NAME = KeepMirror;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FFA21BE87B20C8B326348F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0986D49D25EF93381CD36D9E /* Build configuration list for PBXNativeTarget "KeepMirrorHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15314239B40430A074B15EA8 /* Debug */,
+				C5C337E49EBE41BDC4FE6777 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2AF433FE974E96EB915497E9 /* Build configuration list for PBXNativeTarget "KeepMirrorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16B97E88F136BA2153D74E47 /* Debug */,
+				4A70D41882935CA03DCDB2B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2EA58268B73BE36786C5074F /* Build configuration list for PBXProject "KeepMirror" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14C4CEDDD903493CA5A0E357 /* Debug */,
+				FFA21BE87B20C8B326348F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		31685A1A94FC2C0F143DFAC3 /* Build configuration list for PBXNativeTarget "KeepMirrorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B148FF0A0F5B4C4E77061877 /* Debug */,
+				638B6F1CEFD90128E4B740D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C4B0CC22FBA8D635054A2774 /* Build configuration list for PBXNativeTarget "KeepMirror" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF64258FF0C4D71F7ED76BDF /* Debug */,
+				4E5BB43F71AC7986BE0D09A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 86AB8CFB98BBAC8095FDCB1B /* Project object */;
+}

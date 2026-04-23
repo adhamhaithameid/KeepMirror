@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF8994985C4FA0679C92C289"
-               BuildableName = "KeepAwake.app"
-               BlueprintName = "KeepAwake"
-               ReferencedContainer = "container:KeepAwake.xcodeproj">
+               BlueprintIdentifier = "FA85E685F488D387E9E735E6"
+               BuildableName = "KeepMirror.app"
+               BlueprintName = "KeepMirror"
+               ReferencedContainer = "container:KeepMirror.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,10 +29,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3E9F4421216D82BC9DE1BB3F"
-               BuildableName = "KeepAwakeHelper"
-               BlueprintName = "KeepAwakeHelper"
-               ReferencedContainer = "container:KeepAwake.xcodeproj">
+               BlueprintIdentifier = "D280E70D06C0F2140FC4D8D7"
+               BuildableName = "KeepMirrorHelper"
+               BlueprintName = "KeepMirrorHelper"
+               ReferencedContainer = "container:KeepMirror.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF8994985C4FA0679C92C289"
-            BuildableName = "KeepAwake.app"
-            BlueprintName = "KeepAwake"
-            ReferencedContainer = "container:KeepAwake.xcodeproj">
+            BlueprintIdentifier = "FA85E685F488D387E9E735E6"
+            BuildableName = "KeepMirror.app"
+            BlueprintName = "KeepMirror"
+            ReferencedContainer = "container:KeepMirror.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -59,10 +59,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEA2BB85F6D54472DB9166E8"
-               BuildableName = "KeepAwakeTests.xctest"
-               BlueprintName = "KeepAwakeTests"
-               ReferencedContainer = "container:KeepAwake.xcodeproj">
+               BlueprintIdentifier = "3B00F8D69D2971A942E0FE95"
+               BuildableName = "KeepMirrorTests.xctest"
+               BlueprintName = "KeepMirrorTests"
+               ReferencedContainer = "container:KeepMirror.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -70,10 +70,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "333BC60B67E2B248B39796E8"
-               BuildableName = "KeepAwakeUITests.xctest"
-               BlueprintName = "KeepAwakeUITests"
-               ReferencedContainer = "container:KeepAwake.xcodeproj">
+               BlueprintIdentifier = "F2A96E4C0B8BA80CB3E10EA8"
+               BuildableName = "KeepMirrorUITests.xctest"
+               BlueprintName = "KeepMirrorUITests"
+               ReferencedContainer = "container:KeepMirror.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF8994985C4FA0679C92C289"
-            BuildableName = "KeepAwake.app"
-            BlueprintName = "KeepAwake"
-            ReferencedContainer = "container:KeepAwake.xcodeproj">
+            BlueprintIdentifier = "FA85E685F488D387E9E735E6"
+            BuildableName = "KeepMirror.app"
+            BlueprintName = "KeepMirror"
+            ReferencedContainer = "container:KeepMirror.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -111,10 +111,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BF8994985C4FA0679C92C289"
-            BuildableName = "KeepAwake.app"
-            BlueprintName = "KeepAwake"
-            ReferencedContainer = "container:KeepAwake.xcodeproj">
+            BlueprintIdentifier = "FA85E685F488D387E9E735E6"
+            BuildableName = "KeepMirror.app"
+            BlueprintName = "KeepMirror"
+            ReferencedContainer = "container:KeepMirror.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
