@@ -15,8 +15,9 @@ settings:
     SWIFT_VERSION: 6.0
     MARKETING_VERSION: 1.0.0
     CURRENT_PROJECT_VERSION: 1
-    GENERATE_INFOPLIST_FILE: NO
     MACOSX_DEPLOYMENT_TARGET: "13.0"
+    # Explicitly off globally so no target accidentally auto-generates a plist.
+    GENERATE_INFOPLIST_FILE: NO
 
 targets:
   KeepMirror:
@@ -24,33 +25,32 @@ targets:
     platform: macOS
     deploymentTarget: "13.0"
     sources:
+      # ── App entry ────────────────────────────────────────────────────────
       - path: KeepMirror/App/main.swift
       - path: KeepMirror/App/AppDelegate.swift
       - path: KeepMirror/App/AppEnvironment.swift
-      - path: KeepMirror/App/KeepMirrorController.swift
-      - path: KeepMirror/Models/ActivationDuration.swift
-      - path: KeepMirror/Models/ActivationSession.swift
-      - path: KeepMirror/Models/AppSettings.swift
-      - path: KeepMirror/Models/PowerSnapshot.swift
-      - path: KeepMirror/Services/ActivationSessionController.swift
-      - path: KeepMirror/Services/BatteryMonitor.swift
-      - path: KeepMirror/Services/FocusDetectionService.swift
+      - path: KeepMirror/App/MirrorController.swift
+      # ── Models ───────────────────────────────────────────────────────────
+      - path: KeepMirror/Models/MirrorSettings.swift
+      # ── Services ─────────────────────────────────────────────────────────
+      - path: KeepMirror/Services/CameraManager.swift
+      - path: KeepMirror/Services/NotchHoverMonitor.swift
       - path: KeepMirror/Services/LaunchAtLoginManager.swift
       - path: KeepMirror/Services/LinkOpening.swift
-      - path: KeepMirror/Services/NotificationManager.swift
-      - path: KeepMirror/Services/PowerStatusProviding.swift
       - path: KeepMirror/Services/SettingsStore.swift
       - path: KeepMirror/Services/SettingsWindowManager.swift
       - path: KeepMirror/Services/StatusItemController.swift
-      - path: KeepMirror/Services/WakeAssertionController.swift
-      - path: KeepMirror/Views/AboutTabView.swift
-      - path: KeepMirror/Views/ActivationDurationTabView.swift
-      - path: KeepMirror/Views/AddDurationSheet.swift
-      - path: KeepMirror/Views/KeepMirrorBranding.swift
-      - path: KeepMirror/Views/OnboardingView.swift
-      - path: KeepMirror/Views/QuickActionsMenuView.swift
-      - path: KeepMirror/Views/SettingsTabView.swift
+      - path: KeepMirror/Services/StandaloneMicMonitor.swift
+      - path: KeepMirror/Services/GlobalHotkeyManager.swift
+      # ── Views ────────────────────────────────────────────────────────────
+      - path: KeepMirror/Views/MirrorPopoverView.swift
+      - path: KeepMirror/Views/NotchPanelController.swift
+      - path: KeepMirror/Views/MirrorSettingsTabView.swift
+      - path: KeepMirror/Views/HotkeyRecorderRow.swift
       - path: KeepMirror/Views/SettingsWindowView.swift
+      - path: KeepMirror/Views/AboutTabView.swift
+      - path: KeepMirror/Views/KeepMirrorBranding.swift
+      # ── Support ──────────────────────────────────────────────────────────
       - path: KeepMirror/Support/AppTab.swift
       - path: KeepMirror/Support/ExternalLinks.swift
     resources:
@@ -58,11 +58,12 @@ targets:
       - path: KeepMirror/Resources/KeepMirror.icns
       - path: KeepMirror/Resources/brand-mark.png
       - path: KeepMirror/Resources/Assets.xcassets
-    info:
-      path: KeepMirror/Info.plist
     settings:
       base:
-        INFOPLIST_KEY_CFBundleIconFile: KeepMirror.icns
+        # Use our handcrafted Info.plist which has NSCamera/NSMicrophone usage strings.
+        # Do NOT use info: in XcodeGen — it generates a fresh plist that strips unknown keys.
+        INFOPLIST_FILE: KeepMirror/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
         PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepmirror
         PRODUCT_NAME: KeepMirror
         ENABLE_HARDENED_RUNTIME: YES
@@ -71,24 +72,6 @@ targets:
     dependencies:
       - target: KeepMirrorHelper
     postBuildScripts:
-      - name: Copy App Resources
-        script: |
-          set -euo pipefail
-          DEST="$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Resources"
-          PLIST="$TARGET_BUILD_DIR/$INFOPLIST_PATH"
-          mkdir -p "$DEST"
-          cp "$SRCROOT/KeepMirror/Resources/profile.png" "$DEST/profile.png"
-          cp "$SRCROOT/KeepMirror/Resources/KeepMirror.icns" "$DEST/KeepMirror.icns"
-          cp "$SRCROOT/KeepMirror/Resources/brand-mark.png" "$DEST/brand-mark.png"
-          if /usr/libexec/PlistBuddy -c "Print :CFBundleIconFile" "$PLIST" >/dev/null 2>&1; then
-            /usr/libexec/PlistBuddy -c "Set :CFBundleIconFile KeepMirror.icns" "$PLIST"
-          else
-            /usr/libexec/PlistBuddy -c "Add :CFBundleIconFile string KeepMirror.icns" "$PLIST"
-          fi
-        outputFiles:
-          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/profile.png
-          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/KeepMirror.icns
-          - $(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/brand-mark.png
       - name: Embed Helper
         script: |
           set -euo pipefail
@@ -119,18 +102,12 @@ targets:
     platform: macOS
     deploymentTarget: "13.0"
     sources:
-      - path: KeepMirrorTests/ActivationDurationTests.swift
-      - path: KeepMirrorTests/ActivationSessionControllerTests.swift
-      - path: KeepMirrorTests/AppSettingsTests.swift
-      - path: KeepMirrorTests/KeepMirrorControllerTests.swift
-    dependencies:
-      - target: KeepMirror
+      - path: KeepMirrorTests/MirrorSettingsTests.swift
+      - path: KeepMirror/Models/MirrorSettings.swift
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
         PRODUCT_BUNDLE_IDENTIFIER: com.adhamhaithameid.keepmirror.tests
-        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/KeepMirror.app/Contents/MacOS/KeepMirror"
-        BUNDLE_LOADER: "$(TEST_HOST)"
 
   KeepMirrorUITests:
     type: bundle.ui-testing
