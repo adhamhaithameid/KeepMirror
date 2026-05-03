@@ -7,52 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0ABCE24E9088F11DB1BCDA33 /* AddDurationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F671F9BAD79AC89E4444E5DA /* AddDurationSheet.swift */; };
 		0E9EEF7FEAA9674A5DC4A90A /* SettingsWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4043287185FACEFD6A490 /* SettingsWindowManager.swift */; };
-		230C6829ACBBD67E06A23807 /* KeepMirrorControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE948A4EF8C1E8532A7178 /* KeepMirrorControllerTests.swift */; };
 		26B8C7E0B34C44DCFB167457 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BAD010517E9F9FCFB5D44C /* AppTab.swift */; };
-		2FF8A605BD48E9BD1ED41AE4 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC5D6A7E08359296EDBF459 /* AppSettingsTests.swift */; };
+		34AF183CFD8A4A55B4273758 /* NotchHoverMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14089262738CA4E7257D1A /* NotchHoverMonitor.swift */; };
+		47E695DB47BCE16CF9802659 /* MirrorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF0B8F644F862202B7CF36 /* MirrorSettings.swift */; };
+		49B17415754E7485B9A10AEA /* StandaloneMicMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4018BB34F60246FB58BCBB /* StandaloneMicMonitor.swift */; };
 		519E721812B94D9B394ED864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D243F105A0352CE1FE57AC88 /* AppDelegate.swift */; };
+		57C0B82FDAD47C9CC8305AD4 /* MirrorSettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9981FCDCAED142E423D060 /* MirrorSettingsTabView.swift */; };
 		5DA252A8C1B2FA7274EB7D31 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76F745ACB30F18FB9E76A56 /* AppEnvironment.swift */; };
-		5E876209B0CFD231E5F3DFB5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7154D1EBD5A8539959287 /* NotificationManager.swift */; };
-		62FAD2DC20F005F00FA1360D /* PowerStatusProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */; };
-		69D58D6AB746A16FCF2DBA52 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83821A36151A19B1DACD633 /* SettingsTabView.swift */; };
-		70EBB0A3B87FA120FDDFBBDD /* QuickActionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769E60B84DFE1227A69F530 /* QuickActionsMenuView.swift */; };
-		72635820732ADC34FABA078D /* PowerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFDB8A2AD59835B3CAA4864 /* PowerSnapshot.swift */; };
+		63376EEABD7A10000EEDB306 /* MirrorSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E447DCF3A6F7500DF6AF9D9 /* MirrorSettingsTests.swift */; };
+		678740B62825DE0558D7CB6D /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB7A6D93ED94AC038D0662E /* CameraManager.swift */; };
+		823EAB619FA1E52CA96C7509 /* HotkeyRecorderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C136BC7D4DA944E318BA3F8 /* HotkeyRecorderRow.swift */; };
 		82AC693D51199F8A796F2E82 /* KeepMirrorHelper in Resources */ = {isa = PBXBuildFile; fileRef = 9AF578C0B546463043C83AC0 /* KeepMirrorHelper */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		84BB3DC9CC009C4FEDC817A5 /* WakeAssertionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */; };
 		84DEAD05367FE29A7D444F7D /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A07803415E41702CDFED0 /* SettingsStore.swift */; };
 		85BF51CFE7A8D80658714615 /* AboutTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178AF5160E647D3661AD246C /* AboutTabView.swift */; };
-		865732628225EAB24A9C4130 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661F69BA644CBD28F79EF76 /* AppSettings.swift */; };
-		90FC544DAC84CA8AF39E6E24 /* KeepMirrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691115DA7020C88B2DE712C9 /* KeepMirrorController.swift */; };
+		90F316FB77FF4BAB9AD710E1 /* MirrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E17C38F0054DFD02495D0 /* MirrorController.swift */; };
 		A27D9005067CC7F5E9C76C5A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01B9086CFBFC202491F7628 /* main.swift */; };
-		A2A3064CAAE9A85FAB9A4980 /* FocusDetectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C669DBED4E215F1EBB8891 /* FocusDetectionService.swift */; };
 		A3BA6FD6589A4EDBE5F02885 /* ExternalLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A524858111AF342C4C37D /* ExternalLinks.swift */; };
 		A4DE188EAEA8AD74181EAE34 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD75A3EC5F77DE57763BD1E8 /* main.swift */; };
+		AA248108865F1848703CB3FF /* GlobalHotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7B029CE2541FDA66148180 /* GlobalHotkeyManager.swift */; };
 		AD82600C10DC4A448523EE56 /* LinkOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF478022AE6F5CE23040257 /* LinkOpening.swift */; };
-		AE2CE5F8EACFC8AC3532315E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0E406577F587D6B393F52D /* OnboardingView.swift */; };
-		B16FC536EEE686DCA6C959EB /* ActivationSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67187224327D016F3800474B /* ActivationSessionController.swift */; };
-		C11985CB85A4E92775901AD2 /* BatteryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D980567F62B3AB427B6FA0 /* BatteryMonitor.swift */; };
-		C631DAEBA56AA871867ED33D /* ActivationDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68B43A0FC43A8FC83701951 /* ActivationDuration.swift */; };
-		CF63D677BFA7E120039C8D6B /* ActivationDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB656795DE2060719E82AB8 /* ActivationDurationTests.swift */; };
+		AF7E2BDF99FB0F8AAF1BBD62 /* MirrorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF0B8F644F862202B7CF36 /* MirrorSettings.swift */; };
 		D21EFE9174B65AAA33C1209E /* SettingsWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */; };
-		D4DA3B2A00CE4CE5ED8171A6 /* ActivationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120769AB246D938E7E71908 /* ActivationSession.swift */; };
+		D83228BB04BBDF7C27ACE464 /* MirrorPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDA568390B0C59197DEF615 /* MirrorPopoverView.swift */; };
 		D860D2D293FE28F39B7B72F2 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */; };
 		DECA470CD36A7C8F953C38C8 /* LaunchAtLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA48E2499CDD091C7E858225 /* LaunchAtLoginManager.swift */; };
-		E76E82614A0638417A468561 /* ActivationDurationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5979AC6FF169D3719E94B68 /* ActivationDurationTabView.swift */; };
+		FD70294DE1B54A0DF5243973 /* NotchPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484A9A6904E6616213891267 /* NotchPanelController.swift */; };
 		FD8B385986951A95F462961C /* KeepMirrorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629E7A346EC83D187315B2F /* KeepMirrorUITests.swift */; };
-		FE7FF0529E1AE1191B7674A3 /* ActivationSessionControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EE910D152D505AEF9D725 /* ActivationSessionControllerTests.swift */; };
 		FFF73A75423DC0285690342C /* KeepMirrorBranding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7958E43C20F04A9F862AC855 /* KeepMirrorBranding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A31F1F5DCF42A6C361504B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86AB8CFB98BBAC8095FDCB1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA85E685F488D387E9E735E6;
-			remoteInfo = KeepMirror;
-		};
 		571FA4F512172F9C6EC78EAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86AB8CFB98BBAC8095FDCB1B /* Project object */;
@@ -70,44 +55,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0EFDB8A2AD59835B3CAA4864 /* PowerSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerSnapshot.swift; sourceTree = "<group>"; };
 		178AF5160E647D3661AD246C /* AboutTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTabView.swift; sourceTree = "<group>"; };
 		1CA4043287185FACEFD6A490 /* SettingsWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowManager.swift; sourceTree = "<group>"; };
+		1D4018BB34F60246FB58BCBB /* StandaloneMicMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandaloneMicMonitor.swift; sourceTree = "<group>"; };
+		2D9981FCDCAED142E423D060 /* MirrorSettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorSettingsTabView.swift; sourceTree = "<group>"; };
 		32F72AC388DF311B6DBC1C06 /* KeepMirror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepMirror.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		44FE948A4EF8C1E8532A7178 /* KeepMirrorControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorControllerTests.swift; sourceTree = "<group>"; };
+		3FDF0B8F644F862202B7CF36 /* MirrorSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorSettings.swift; sourceTree = "<group>"; };
+		484A9A6904E6616213891267 /* NotchPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchPanelController.swift; sourceTree = "<group>"; };
+		4C136BC7D4DA944E318BA3F8 /* HotkeyRecorderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyRecorderRow.swift; sourceTree = "<group>"; };
 		4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowView.swift; sourceTree = "<group>"; };
 		5629E7A346EC83D187315B2F /* KeepMirrorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorUITests.swift; sourceTree = "<group>"; };
-		5661F69BA644CBD28F79EF76 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		5828D2F92BA5CC6C167DB916 /* KeepMirrorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepMirrorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5ED7154D1EBD5A8539959287 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		67187224327D016F3800474B /* ActivationSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationSessionController.swift; sourceTree = "<group>"; };
-		691115DA7020C88B2DE712C9 /* KeepMirrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorController.swift; sourceTree = "<group>"; };
+		6B9E17C38F0054DFD02495D0 /* MirrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorController.swift; sourceTree = "<group>"; };
+		6BB7A6D93ED94AC038D0662E /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		6E447DCF3A6F7500DF6AF9D9 /* MirrorSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorSettingsTests.swift; sourceTree = "<group>"; };
 		6E8A524858111AF342C4C37D /* ExternalLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinks.swift; sourceTree = "<group>"; };
-		6FC5D6A7E08359296EDBF459 /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
-		751EE910D152D505AEF9D725 /* ActivationSessionControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationSessionControllerTests.swift; sourceTree = "<group>"; };
 		7958E43C20F04A9F862AC855 /* KeepMirrorBranding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepMirrorBranding.swift; sourceTree = "<group>"; };
-		7FB656795DE2060719E82AB8 /* ActivationDurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationDurationTests.swift; sourceTree = "<group>"; };
-		8120769AB246D938E7E71908 /* ActivationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationSession.swift; sourceTree = "<group>"; };
-		8769E60B84DFE1227A69F530 /* QuickActionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsMenuView.swift; sourceTree = "<group>"; };
 		94BAD010517E9F9FCFB5D44C /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
-		96C669DBED4E215F1EBB8891 /* FocusDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDetectionService.swift; sourceTree = "<group>"; };
 		9AF578C0B546463043C83AC0 /* KeepMirrorHelper */ = {isa = PBXFileReference; includeInIndex = 0; path = KeepMirrorHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C14089262738CA4E7257D1A /* NotchHoverMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchHoverMonitor.swift; sourceTree = "<group>"; };
+		9E7B029CE2541FDA66148180 /* GlobalHotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotkeyManager.swift; sourceTree = "<group>"; };
 		A49A07803415E41702CDFED0 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
-		A83821A36151A19B1DACD633 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
-		A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerStatusProviding.swift; sourceTree = "<group>"; };
 		AD75A3EC5F77DE57763BD1E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		ADDA568390B0C59197DEF615 /* MirrorPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorPopoverView.swift; sourceTree = "<group>"; };
 		B2F32BD88A455D72F203E210 /* KeepMirrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepMirrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF478022AE6F5CE23040257 /* LinkOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkOpening.swift; sourceTree = "<group>"; };
 		C01B9086CFBFC202491F7628 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeAssertionController.swift; sourceTree = "<group>"; };
 		C76F745ACB30F18FB9E76A56 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		D243F105A0352CE1FE57AC88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5979AC6FF169D3719E94B68 /* ActivationDurationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationDurationTabView.swift; sourceTree = "<group>"; };
-		D68B43A0FC43A8FC83701951 /* ActivationDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationDuration.swift; sourceTree = "<group>"; };
-		DD0E406577F587D6B393F52D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		F3D980567F62B3AB427B6FA0 /* BatteryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMonitor.swift; sourceTree = "<group>"; };
-		F671F9BAD79AC89E4444E5DA /* AddDurationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDurationSheet.swift; sourceTree = "<group>"; };
 		FA48E2499CDD091C7E858225 /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,10 +138,7 @@
 		7D31B08B80BCD5428590969E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D68B43A0FC43A8FC83701951 /* ActivationDuration.swift */,
-				8120769AB246D938E7E71908 /* ActivationSession.swift */,
-				5661F69BA644CBD28F79EF76 /* AppSettings.swift */,
-				0EFDB8A2AD59835B3CAA4864 /* PowerSnapshot.swift */,
+				3FDF0B8F644F862202B7CF36 /* MirrorSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,10 +146,7 @@
 		9623B0D879195AB5796C5C04 /* KeepMirrorTests */ = {
 			isa = PBXGroup;
 			children = (
-				7FB656795DE2060719E82AB8 /* ActivationDurationTests.swift */,
-				751EE910D152D505AEF9D725 /* ActivationSessionControllerTests.swift */,
-				6FC5D6A7E08359296EDBF459 /* AppSettingsTests.swift */,
-				44FE948A4EF8C1E8532A7178 /* KeepMirrorControllerTests.swift */,
+				6E447DCF3A6F7500DF6AF9D9 /* MirrorSettingsTests.swift */,
 			);
 			path = KeepMirrorTests;
 			sourceTree = "<group>";
@@ -186,8 +156,8 @@
 			children = (
 				D243F105A0352CE1FE57AC88 /* AppDelegate.swift */,
 				C76F745ACB30F18FB9E76A56 /* AppEnvironment.swift */,
-				691115DA7020C88B2DE712C9 /* KeepMirrorController.swift */,
 				C01B9086CFBFC202491F7628 /* main.swift */,
+				6B9E17C38F0054DFD02495D0 /* MirrorController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -207,17 +177,15 @@
 		BB363988834A624D428D8A70 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				67187224327D016F3800474B /* ActivationSessionController.swift */,
-				F3D980567F62B3AB427B6FA0 /* BatteryMonitor.swift */,
-				96C669DBED4E215F1EBB8891 /* FocusDetectionService.swift */,
+				6BB7A6D93ED94AC038D0662E /* CameraManager.swift */,
+				9E7B029CE2541FDA66148180 /* GlobalHotkeyManager.swift */,
 				FA48E2499CDD091C7E858225 /* LaunchAtLoginManager.swift */,
 				BBF478022AE6F5CE23040257 /* LinkOpening.swift */,
-				5ED7154D1EBD5A8539959287 /* NotificationManager.swift */,
-				A8930CB989F9FAA33679F274 /* PowerStatusProviding.swift */,
+				9C14089262738CA4E7257D1A /* NotchHoverMonitor.swift */,
 				A49A07803415E41702CDFED0 /* SettingsStore.swift */,
 				1CA4043287185FACEFD6A490 /* SettingsWindowManager.swift */,
+				1D4018BB34F60246FB58BCBB /* StandaloneMicMonitor.swift */,
 				4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */,
-				C6FBADDBB54E2B683DEFFF45 /* WakeAssertionController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -226,12 +194,11 @@
 			isa = PBXGroup;
 			children = (
 				178AF5160E647D3661AD246C /* AboutTabView.swift */,
-				D5979AC6FF169D3719E94B68 /* ActivationDurationTabView.swift */,
-				F671F9BAD79AC89E4444E5DA /* AddDurationSheet.swift */,
+				4C136BC7D4DA944E318BA3F8 /* HotkeyRecorderRow.swift */,
 				7958E43C20F04A9F862AC855 /* KeepMirrorBranding.swift */,
-				DD0E406577F587D6B393F52D /* OnboardingView.swift */,
-				8769E60B84DFE1227A69F530 /* QuickActionsMenuView.swift */,
-				A83821A36151A19B1DACD633 /* SettingsTabView.swift */,
+				ADDA568390B0C59197DEF615 /* MirrorPopoverView.swift */,
+				2D9981FCDCAED142E423D060 /* MirrorSettingsTabView.swift */,
+				484A9A6904E6616213891267 /* NotchPanelController.swift */,
 				540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */,
 			);
 			path = Views;
@@ -249,7 +216,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D229D06691CAC25C82AED158 /* PBXTargetDependency */,
 			);
 			name = KeepMirrorTests;
 			packageProductDependencies = (
@@ -299,7 +265,6 @@
 			buildPhases = (
 				35EEE74D525B6D2848CB194C /* Sources */,
 				A124433C5B1A95618C3EBF9B /* Resources */,
-				0B8DEFA9B30824F02D8135A0 /* Copy App Resources */,
 				64AF50A6EAFA87A20DAE0364 /* Embed Helper */,
 			);
 			buildRules = (
@@ -368,27 +333,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B8DEFA9B30824F02D8135A0 /* Copy App Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy App Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/profile.png",
-				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/KeepMirror.icns",
-				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/brand-mark.png",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -euo pipefail\nDEST=\"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Resources\"\nPLIST=\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\nmkdir -p \"$DEST\"\ncp \"$SRCROOT/KeepMirror/Resources/profile.png\" \"$DEST/profile.png\"\ncp \"$SRCROOT/KeepMirror/Resources/KeepMirror.icns\" \"$DEST/KeepMirror.icns\"\ncp \"$SRCROOT/KeepMirror/Resources/brand-mark.png\" \"$DEST/brand-mark.png\"\nif /usr/libexec/PlistBuddy -c \"Print :CFBundleIconFile\" \"$PLIST\" >/dev/null 2>&1; then\n  /usr/libexec/PlistBuddy -c \"Set :CFBundleIconFile KeepMirror.icns\" \"$PLIST\"\nelse\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleIconFile string KeepMirror.icns\" \"$PLIST\"\nfi\n";
-		};
 		64AF50A6EAFA87A20DAE0364 /* Embed Helper */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,10 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF63D677BFA7E120039C8D6B /* ActivationDurationTests.swift in Sources */,
-				FE7FF0529E1AE1191B7674A3 /* ActivationSessionControllerTests.swift in Sources */,
-				2FF8A605BD48E9BD1ED41AE4 /* AppSettingsTests.swift in Sources */,
-				230C6829ACBBD67E06A23807 /* KeepMirrorControllerTests.swift in Sources */,
+				47E695DB47BCE16CF9802659 /* MirrorSettings.swift in Sources */,
+				63376EEABD7A10000EEDB306 /* MirrorSettingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,33 +377,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				85BF51CFE7A8D80658714615 /* AboutTabView.swift in Sources */,
-				C631DAEBA56AA871867ED33D /* ActivationDuration.swift in Sources */,
-				E76E82614A0638417A468561 /* ActivationDurationTabView.swift in Sources */,
-				D4DA3B2A00CE4CE5ED8171A6 /* ActivationSession.swift in Sources */,
-				B16FC536EEE686DCA6C959EB /* ActivationSessionController.swift in Sources */,
-				0ABCE24E9088F11DB1BCDA33 /* AddDurationSheet.swift in Sources */,
 				519E721812B94D9B394ED864 /* AppDelegate.swift in Sources */,
 				5DA252A8C1B2FA7274EB7D31 /* AppEnvironment.swift in Sources */,
-				865732628225EAB24A9C4130 /* AppSettings.swift in Sources */,
 				26B8C7E0B34C44DCFB167457 /* AppTab.swift in Sources */,
-				C11985CB85A4E92775901AD2 /* BatteryMonitor.swift in Sources */,
+				678740B62825DE0558D7CB6D /* CameraManager.swift in Sources */,
 				A3BA6FD6589A4EDBE5F02885 /* ExternalLinks.swift in Sources */,
-				A2A3064CAAE9A85FAB9A4980 /* FocusDetectionService.swift in Sources */,
+				AA248108865F1848703CB3FF /* GlobalHotkeyManager.swift in Sources */,
+				823EAB619FA1E52CA96C7509 /* HotkeyRecorderRow.swift in Sources */,
 				FFF73A75423DC0285690342C /* KeepMirrorBranding.swift in Sources */,
-				90FC544DAC84CA8AF39E6E24 /* KeepMirrorController.swift in Sources */,
 				DECA470CD36A7C8F953C38C8 /* LaunchAtLoginManager.swift in Sources */,
 				AD82600C10DC4A448523EE56 /* LinkOpening.swift in Sources */,
-				5E876209B0CFD231E5F3DFB5 /* NotificationManager.swift in Sources */,
-				AE2CE5F8EACFC8AC3532315E /* OnboardingView.swift in Sources */,
-				72635820732ADC34FABA078D /* PowerSnapshot.swift in Sources */,
-				62FAD2DC20F005F00FA1360D /* PowerStatusProviding.swift in Sources */,
-				70EBB0A3B87FA120FDDFBBDD /* QuickActionsMenuView.swift in Sources */,
+				90F316FB77FF4BAB9AD710E1 /* MirrorController.swift in Sources */,
+				D83228BB04BBDF7C27ACE464 /* MirrorPopoverView.swift in Sources */,
+				AF7E2BDF99FB0F8AAF1BBD62 /* MirrorSettings.swift in Sources */,
+				57C0B82FDAD47C9CC8305AD4 /* MirrorSettingsTabView.swift in Sources */,
+				34AF183CFD8A4A55B4273758 /* NotchHoverMonitor.swift in Sources */,
+				FD70294DE1B54A0DF5243973 /* NotchPanelController.swift in Sources */,
 				84DEAD05367FE29A7D444F7D /* SettingsStore.swift in Sources */,
-				69D58D6AB746A16FCF2DBA52 /* SettingsTabView.swift in Sources */,
 				0E9EEF7FEAA9674A5DC4A90A /* SettingsWindowManager.swift in Sources */,
 				D21EFE9174B65AAA33C1209E /* SettingsWindowView.swift in Sources */,
+				49B17415754E7485B9A10AEA /* StandaloneMicMonitor.swift in Sources */,
 				D860D2D293FE28F39B7B72F2 /* StatusItemController.swift in Sources */,
-				84BB3DC9CC009C4FEDC817A5 /* WakeAssertionController.swift in Sources */,
 				A27D9005067CC7F5E9C76C5A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,11 +422,6 @@
 			isa = PBXTargetDependency;
 			target = D280E70D06C0F2140FC4D8D7 /* KeepMirrorHelper */;
 			targetProxy = 571FA4F512172F9C6EC78EAE /* PBXContainerItemProxy */;
-		};
-		D229D06691CAC25C82AED158 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA85E685F488D387E9E735E6 /* KeepMirror */;
-			targetProxy = 1A31F1F5DCF42A6C361504B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -624,8 +555,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KeepMirror/Info.plist;
-				INFOPLIST_KEY_CFBundleIconFile = KeepMirror.icns;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -651,7 +582,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.tests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeepMirror.app/Contents/MacOS/KeepMirror";
 			};
 			name = Release;
 		};
@@ -669,7 +599,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adhamhaithameid.keepmirror.tests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KeepMirror.app/Contents/MacOS/KeepMirror";
 			};
 			name = Debug;
 		};
@@ -700,8 +629,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KeepMirror/Info.plist;
-				INFOPLIST_KEY_CFBundleIconFile = KeepMirror.icns;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
