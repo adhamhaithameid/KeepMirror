@@ -1,7 +1,10 @@
 import SwiftUI
 
 struct SettingsWindowView: View {
-    @ObservedObject var controller: KeepMirrorController
+    @ObservedObject var controller: MirrorController
+
+    // Shared recording state — lifted here so the overlay can cover the full window
+    @State private var isHotkeyRecording = false
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -14,14 +17,10 @@ struct SettingsWindowView: View {
                 Group {
                     switch controller.selectedTab {
                     case .settings:
-                        SettingsTabView(
+                        MirrorSettingsTabView(
                             controller: controller,
-                            settings: controller.settings
-                        )
-                    case .activationDuration:
-                        ActivationDurationTabView(
-                            controller: controller,
-                            settings: controller.settings
+                            settings: controller.settings,
+                            isHotkeyRecording: $isHotkeyRecording
                         )
                     case .about:
                         AboutTabView(controller: controller)
@@ -29,42 +28,31 @@ struct SettingsWindowView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
 
-                // Bottom bar: status message + Quit button (hidden on About tab)
-                if controller.selectedTab != .about {
-                    HStack {
-                        Text(controller.statusMessage)
-                            .font(.system(size: 12))
-                            .foregroundStyle(KeepMirrorPalette.mutedInk)
-
-                        Spacer()
-
-                        Button(role: .destructive) {
-                            Task {
-                                await controller.handleTermination()
-                                NSApp.terminate(nil)
-                            }
-                        } label: {
-                            Label("Quit", systemImage: "power")
-                                .font(.system(size: 12, weight: .medium))
-                        }
-                        .buttonStyle(.plain)
-                        .foregroundStyle(Color.red.opacity(0.7))
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(Color.red.opacity(0.08), in: RoundedRectangle(cornerRadius: 6))
+                // Bottom bar — Quit button
+                HStack {
+                    Spacer()
+                    Button(role: .destructive) {
+                        NSApp.terminate(nil)
+                    } label: {
+                        Label("Quit", systemImage: "power")
+                            .font(.system(size: 12, weight: .medium))
                     }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(Color.red.opacity(0.7))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.red.opacity(0.08), in: RoundedRectangle(cornerRadius: 6))
                 }
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 18)
-        }
-        .frame(minWidth: 620, minHeight: 520)
-        .sheet(isPresented: $controller.isShowingAddDurationSheet) {
-            AddDurationSheet { duration in
-                controller.settings.addDuration(duration)
-                controller.selectedDurationID = duration.id
+
+            // Full-window hotkey recording overlay — sits above everything
+            HotkeyRecordingOverlay(isRecording: isHotkeyRecording) {
+                withAnimation(.easeOut(duration: 0.2)) { isHotkeyRecording = false }
             }
         }
+        .frame(minWidth: 480, idealWidth: 540, minHeight: 480)
     }
 
     private var tabBar: some View {
@@ -94,7 +82,6 @@ struct SettingsWindowView: View {
             HStack(spacing: 6) {
                 Image(systemName: tab.icon)
                     .font(.system(size: 12, weight: .medium))
-
                 Text(tab.title)
                     .font(.system(size: 13, weight: controller.selectedTab == tab ? .semibold : .medium))
             }
