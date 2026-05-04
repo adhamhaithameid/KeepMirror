@@ -3,7 +3,7 @@ import Foundation
 // MARK: - SettingsStore protocol
 
 /// An abstraction over a key-value persistence backend.
-/// `AppSettings` reads and writes through this protocol so the backing
+/// `MirrorSettings` reads and writes through this protocol so the backing
 /// store can be swapped between `UserDefaults` and `NSUbiquitousKeyValueStore`
 /// (iCloud Key-Value Store) without any changes to the settings logic.
 ///
@@ -44,7 +44,7 @@ extension UserDefaults: SettingsStore {
 /// - On write: written to BOTH iCloud KV and UserDefaults (belt-and-suspenders).
 /// - On read: prefers iCloud KV; falls back to UserDefaults.
 /// - On external change (`NSUbiquitousKeyValueStoreDidChangeExternallyNotification`):
-///   applies remote values to UserDefaults and posts `AppSettings.didChangeExternallyNotification`
+///   applies remote values to UserDefaults and posts `MirrorSettings.didChangeExternallyNotification`
 ///   so the UI can refresh.
 ///
 /// ## Entitlement
@@ -148,12 +148,4 @@ final class iCloudFallbackStore: SettingsStore {
     }
 }
 
-// MARK: - AppSettings factory
-
-extension AppSettings {
-    /// Creates an `AppSettings` backed by iCloud KV with a `UserDefaults` fallback.
-    /// Use this in `AppEnvironment.makeEnvironment()` to opt in to sync.
-    static func makeWithiCloudSync() -> AppSettings {
-        AppSettings(store: iCloudFallbackStore())
-    }
-}
+// Note: iCloudFallbackStore is available for future iCloud sync integration with MirrorSettings.
