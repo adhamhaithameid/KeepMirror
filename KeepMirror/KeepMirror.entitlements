@@ -4,11 +4,17 @@
 <dict>
 	<!--
 	    KeepMirror is NOT sandboxed so it can:
-	      1. Create IOPMAssertion to prevent system and display sleep
-	      2. Use ServiceManagement to register for launch-at-login
-	    Hardened Runtime is enabled in the build settings which is why this file exists.
+	      1. Access the camera via AVFoundation
+	      2. Access the microphone via AVFoundation
+	      3. Use ServiceManagement to register for launch-at-login
+	      4. Monitor global mouse events for notch hover (no sandbox, no Accessibility permission needed)
+	    Hardened Runtime is enabled in the build settings.
 	-->
 	<key>com.apple.security.app-sandbox</key>
 	<false/>
+	<key>com.apple.security.device.camera</key>
+	<true/>
+	<key>com.apple.security.device.microphone</key>
+	<true/>
 </dict>
 </plist>
