@@ -53,11 +53,18 @@ targets:
       # ── Support ──────────────────────────────────────────────────────────
       - path: KeepMirror/Support/AppTab.swift
       - path: KeepMirror/Support/ExternalLinks.swift
-    resources:
-      - path: KeepMirror/Resources/profile.png
-      - path: KeepMirror/Resources/KeepMirror.icns
-      - path: KeepMirror/Resources/brand-mark.png
+      # ── Resources (bundled assets, sounds, images) ────────────────────
       - path: KeepMirror/Resources/Assets.xcassets
+        buildPhase: resources
+      - path: KeepMirror/Resources/profile.png
+        buildPhase: resources
+      - path: KeepMirror/Resources/KeepMirror.icns
+        buildPhase: resources
+      - path: KeepMirror/Resources/brand-mark.png
+        buildPhase: resources
+      - path: KeepMirror/Resources/shutter.wav
+        buildPhase: resources
+
     settings:
       base:
         # Use our handcrafted Info.plist which has NSCamera/NSMicrophone usage strings.
