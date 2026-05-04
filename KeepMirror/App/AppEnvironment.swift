@@ -1,58 +1,103 @@
-import Foundation
+import AppKit
+import SwiftUI
+
+// MARK: - KeepMirrorAppEnvironment
 
 @MainActor
 final class KeepMirrorAppEnvironment {
-    let controller: KeepMirrorController
+    let controller: MirrorController
     let settingsWindowManager: SettingsWindowManager
     let statusItemController: StatusItemController
-    let onboardingManager: OnboardingWindowManager
+    let notchMonitor: NotchHoverMonitor
+    let notchPanelController: NotchPanelController
+    let hotkeyManager: GlobalHotkeyManager
 
     init(
-        controller: KeepMirrorController,
+        controller: MirrorController,
         settingsWindowManager: SettingsWindowManager,
         statusItemController: StatusItemController,
-        onboardingManager: OnboardingWindowManager
+        notchMonitor: NotchHoverMonitor,
+        notchPanelController: NotchPanelController,
+        hotkeyManager: GlobalHotkeyManager
     ) {
         self.controller = controller
         self.settingsWindowManager = settingsWindowManager
         self.statusItemController = statusItemController
-        self.onboardingManager = onboardingManager
+        self.notchMonitor = notchMonitor
+        self.notchPanelController = notchPanelController
+        self.hotkeyManager = hotkeyManager
     }
 }
+
+// MARK: - AppEnvironment factory
 
 enum AppEnvironment {
     @MainActor
     static func makeEnvironment() -> KeepMirrorAppEnvironment {
-        let settings = AppSettings()
-        let sessionController = ActivationSessionController(
-            assertions: LiveWakeAssertionController(),
-            powerStatusProvider: LivePowerStatusProvider()
-        )
-        let focusService = FocusDetectionService()
+        let settings = MirrorSettings()
+        let cameraManager = CameraManager()
+        let launchAtLoginManager = LiveLaunchAtLoginManager()
+        let linkOpener = WorkspaceLinkOpener()
+
         let bridgeWindowManager = BridgeSettingsWindowManager()
-        let controller = KeepMirrorController(
+
+        let controller = MirrorController(
             settings: settings,
-            sessionController: sessionController,
+            cameraManager: cameraManager,
             windowManager: bridgeWindowManager,
-            launchAtLoginManager: LiveLaunchAtLoginManager(),
-            linkOpener: WorkspaceLinkOpener(),
-            focusService: focusService
+            launchAtLoginManager: launchAtLoginManager,
+            linkOpener: linkOpener
         )
+
         let settingsWindowManager = SettingsWindowManager {
             SettingsWindowView(controller: controller)
         }
         bridgeWindowManager.base = settingsWindowManager
+
         let statusItemController = StatusItemController(controller: controller)
-        let onboardingManager = OnboardingWindowManager()
+
+        let notchMonitor = NotchHoverMonitor()
+        let notchPanelController = NotchPanelController(controller: controller)
+
+        // Wire notch hover callbacks
+        notchMonitor.onEnterNotch = { [weak notchPanelController, weak controller] in
+            guard let controller, controller.settings.notchHoverEnabled else { return }
+            notchPanelController?.show()
+        }
+        notchMonitor.onLeaveNotch = { [weak notchPanelController, weak controller] in
+            guard let controller, controller.settings.notchHoverEnabled else { return }
+            notchPanelController?.hide()
+        }
+
+        let hotkeyManager = GlobalHotkeyManager {
+            if statusItemController.isPopoverShown {
+                statusItemController.closePopover()
+            } else {
+                statusItemController.openPopover()
+            }
+        }
+
+        // Seed hotkey from saved settings (may differ from default ⌘⇧M)
+        hotkeyManager.reconfigure(
+            keyCode:   settings.hotkeyKeyCode,
+            modifiers: settings.hotkeyModifiers
+        )
+
+        // Inject into controller so settings view can drive reconfiguration
+        controller.hotkeyManager = hotkeyManager
 
         return KeepMirrorAppEnvironment(
             controller: controller,
             settingsWindowManager: settingsWindowManager,
             statusItemController: statusItemController,
-            onboardingManager: onboardingManager
+            notchMonitor: notchMonitor,
+            notchPanelController: notchPanelController,
+            hotkeyManager: hotkeyManager
         )
     }
 }
+
+// MARK: - BridgeSettingsWindowManager
 
 @MainActor
 private final class BridgeSettingsWindowManager: SettingsWindowManaging {
