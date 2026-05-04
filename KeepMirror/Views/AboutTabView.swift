@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 struct AboutTabView: View {
-    @ObservedObject var controller: KeepMirrorController
+    @ObservedObject var controller: MirrorController
 
     var body: some View {
         VStack(spacing: 0) {
@@ -21,7 +21,7 @@ struct AboutTabView: View {
                         .foregroundStyle(KeepMirrorPalette.mutedInk)
                 }
 
-                Text("Keep your Mac and display awake for the duration you choose, with menu bar controls built for quick toggling.")
+                Text("A beautiful menu bar mirror. Open your camera in an instant — snap photos, check your mic, and access the mirror from the notch.")
                     .font(.system(size: 13))
                     .foregroundStyle(KeepMirrorPalette.mutedInk)
                     .multilineTextAlignment(.center)
