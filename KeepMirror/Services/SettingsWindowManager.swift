@@ -28,7 +28,7 @@ final class SettingsWindowManager: SettingsWindowManaging {
         }
 
         let win = NSWindow(contentViewController: hostingController)
-        win.title = "KeepMirror"
+        win.title = "KeepMirror Settings"
         win.setContentSize(NSSize(width: 640, height: 540))
         win.styleMask = [.titled, .closable, .miniaturizable, .resizable]
         win.toolbarStyle = .unifiedCompact
