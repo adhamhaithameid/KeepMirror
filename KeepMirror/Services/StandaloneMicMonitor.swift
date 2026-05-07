@@ -55,7 +55,13 @@ final class StandaloneMicMonitor: NSObject, ObservableObject, @unchecked Sendabl
 
     func stop() {
         shouldBeRunning = false
-        engineQueue.async { [weak self] in self?.engineStop(publishLevel: true) }
+        // Sync teardown — guarantees the AVAudioEngine is fully stopped before
+        // returning to the caller.  Mirrors CameraManager.stopSessionSync().
+        // AVAudioEngine.stop() is fast; main-thread block is imperceptible.
+        // The Task { @MainActor in … } inside engineStop only *enqueues* work
+        // on the main actor — it does not synchronously acquire it — so there
+        // is no deadlock risk.
+        engineQueue.sync { self.engineStop(publishLevel: true) }
     }
 
     deinit {
