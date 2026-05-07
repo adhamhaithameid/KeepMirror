@@ -20,6 +20,11 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
     private var popover: NSPopover?
     private var cancellables: Set<AnyCancellable> = []
 
+    // Mic monitor owned here — not inside the SwiftUI view — so we can call
+    // stop() synchronously in closePopover/popoverWillClose without relying
+    // on SwiftUI's onDisappear (which is non-deterministic for NSPopover).
+    private let micMonitor = StandaloneMicMonitor()
+
     /// Lightweight watchdog: polls every 500ms for up to 2s after openPopover().
     /// If the session isn't running by then, it cycles it once to recover from
     /// hardware hiccups (common when the same camera was used by another app).
@@ -149,12 +154,16 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
 
         // Start watchdog: if camera isn't running after 2s, cycle it once.
         startWatchdog()
+
+        // Start mic explicitly now that the popover is visible.
+        startMicIfNeeded()
     }
 
     // MARK: - Popover close (also called from NSPopoverDelegate)
 
     func closePopover() {
         stopWatchdog()
+        micMonitor.stop()
         controller.stopCamera()
         popover?.performClose(nil)
         popover = nil
@@ -163,11 +172,20 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
 
     func popoverWillClose(_ notification: Notification) {
         stopWatchdog()
+        micMonitor.stop()
         if controller.cameraManager.isRunning { controller.stopCamera() }
         DispatchQueue.main.async { [weak self] in
             self?.popover = nil
             self?.statusItem.button?.image = self?.handMirrorImage(active: false)
         }
+    }
+
+    // MARK: - Mic helper
+
+    private func startMicIfNeeded() {
+        guard controller.settings.micCheckEnabled,
+              controller.cameraManager.micPermissionGranted else { return }
+        micMonitor.start(gain: controller.settings.micSensitivity.gain)
     }
 
     // MARK: - Camera watchdog
@@ -219,7 +237,7 @@ final class StatusItemController: NSObject, NSPopoverDelegate {
         pop.delegate  = self
 
         let sz = controller.settings.mirrorSize.popoverSize
-        let rootView = MirrorPopoverView(controller: controller) { [weak self] in
+        let rootView = MirrorPopoverView(controller: controller, micMonitor: micMonitor) { [weak self] in
             self?.closePopover()
         }
         let hosting = NSHostingController(rootView: rootView)
