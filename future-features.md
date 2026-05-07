@@ -5,6 +5,7 @@ Planned ideas for future implementation, grouped by area:
 ## Mirror Experience
 
 - Make the mirror size customizable by users.
+- Add a mirror launch-position option: pop out from the menu bar icon or pop out from the screen center (camera position).
 - Add an option to use full width and full height for the mirror.
 - Make full width/full height the default mirror preview mode.
 - Add a mode with no widgets that uses hover to always zoom in the mirror preview.
