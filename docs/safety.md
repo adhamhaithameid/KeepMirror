@@ -1,26 +1,29 @@
 # Safety
 
-KeepMirror is intentionally conservative.
+KeepMirror is designed to be predictable and transparent.
 
-## Battery-Aware Auto Stop
+## Camera lifecycle safety
 
-You can configure the app to stop automatically when:
+- Camera starts when mirror UI is opened.
+- Camera stops when mirror UI is closed.
+- App termination triggers camera stop as a final cleanup step.
 
-- battery drops below a chosen threshold
-- Low Power Mode turns on
+## Mic lifecycle safety
 
-## Display Sleep Option
+- Mic level monitoring is optional and user-controlled.
+- Mic monitor is started/stopped with mirror UI lifecycle when enabled.
+- Settings "Test Mic" mode has explicit start/stop controls.
 
-If you only want the Mac itself to stay awake, turn on **Allow Display Sleep**.
+## Capture safety
 
-## Clean Session Lifecycle
+- First capture asks where to save photos.
+- Save directory is remembered via a scoped bookmark.
+- Optional clipboard/finder actions are user toggles.
 
-Sessions end when:
+## Permission transparency
 
-- you toggle the icon off
-- a timed duration expires
-- a new duration replaces the current one
-- battery rules trigger
-- Low Power Mode triggers
+KeepMirror exposes permission state in Settings and provides direct links to relevant System Settings pages when access is denied.
 
-When a session ends, the app releases its wake assertions.
+## No stealth background agent
+
+KeepMirror is a menu bar app. When it is not running, no camera/mic mirror session is active.

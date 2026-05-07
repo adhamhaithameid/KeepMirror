@@ -2,34 +2,33 @@
 
 KeepMirror runs locally on your Mac.
 
-## What It Collects
+## Data collection
 
-Nothing.
+KeepMirror does not collect, upload, sell, or share personal data.
 
-The app does not collect, upload, sell, or share:
+No analytics SDKs, tracking pixels, account system, or telemetry backend are used for core app functionality.
 
-- usage analytics
-- crash analytics
-- account data
-- personal data
-- browsing data
+## Local data kept on device
 
-## What It Reads Locally
+KeepMirror stores preferences in local `UserDefaults`, such as:
 
-KeepMirror stores your preferences locally, including:
+- selected camera and microphone
+- mirror size, quality, and flip setting
+- capture format and countdown
+- photo save-folder bookmark
+- clipboard/finder post-capture preferences
+- notch mode and hotkey configuration
+- start-at-login preference
 
-- start at login
-- activate on launch
-- battery threshold preferences
-- Low Power Mode auto-stop preference
-- Allow Display Sleep preference
-- your saved duration list
-- your saved default duration
+## Permission usage
 
-If battery-aware rules are enabled, the app also reads current battery percentage and Low Power Mode state while it is running.
+- Camera: live preview and photo capture
+- Microphone (optional): mic level meter only
 
-## Network Access
+KeepMirror does not transcribe, upload, or analyze microphone content remotely.
 
-The app itself does not need network access to keep your Mac awake.
+## Network behavior
 
-Links in the About page may open external websites if you click them.
+Core mirror and capture features do not require internet access.
+
+External links (for example GitHub links opened from About) use your default browser when you click them.

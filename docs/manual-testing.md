@@ -1,62 +1,76 @@
 # Manual Testing
 
-## Menu Bar Basics
+## Launch and menu bar behavior
 
 1. Launch `KeepMirror.app`.
-2. Confirm the coffee icon appears in the menu bar.
-3. **Left-click** the icon — icon switches to filled (active) state.
-4. Left-click again — icon returns to outline (inactive) state.
-5. **⌥ Option + click** the icon — confirms the *default* duration activates instantly without opening any menu.
-6. Confirm a system notification appears when a session is stopped automatically (see Auto-Stop below).
+2. Confirm icon appears in the menu bar.
+3. Left-click icon.
+4. Confirm mirror popover opens and camera light turns on.
+5. Left-click icon again.
+6. Confirm popover closes and camera light turns off.
 
-## Right-Click Menu
+## Right-click context menu
 
-1. **Right-click** the menu bar icon.
-2. **Header** — confirm the live status indicator:
-   - Green breathing dot when active; gray when inactive.
-   - Countdown "1m 23s remaining" ticking down every second when a timed session is active.
-   - Progress ring around the dot depleting over the session lifetime.
-   - Battery line "Battery 87% — stops at 20%" appears when the battery threshold guard is enabled.
-3. **Stop Now** item appears between the header and duration buttons only when a session is active.
-4. Confirm quick buttons show the 3 pinned durations (default: `15m`, `1h`, `∞`).
-5. Confirm **Activate for Duration** opens a submenu with non-pinned durations.
-6. Confirm **Settings…** (⌘,) opens the settings window.
-7. Confirm **Quit KeepMirror** (⌘Q) terminates the app.
+1. Right-click icon.
+2. Confirm menu shows:
+   - Open Mirror
+   - Settings
+   - Quit KeepMirror
+3. Click Open Mirror and confirm popover opens.
+4. Click Settings and confirm settings window opens.
 
-## Settings Window
+## Camera permission flow
 
-1. Right-click → **Settings…**.
-2. Confirm the window comes to the front reliably.
-3. Click anywhere on a full toggle row (not just the checkbox) — it should toggle.
-4. Toggle **Deactivate Below Battery Threshold** on:
-   - A continuous slider (1–100%) appears.
-   - Drag freely to any value, e.g. 25%.
-   - Drag near 10, 20, 50, 70, or 90% — the thumb should snap magnetically.
-   - The readout turns **red** below 21%, **amber** 21–50%, **green** above 50%.
-5. Toggle **Deactivate in Low Power Mode** on; enable Low Power Mode from System Settings.
-   - Confirm any running session stops within 1–2 seconds.
-   - Confirm a system notification appears.
+1. Revoke Camera permission for KeepMirror.
+2. Open popover.
+3. Confirm camera permission prompt UI appears.
+4. Grant permission and reopen popover.
+5. Confirm live preview appears.
 
-## Activation Duration
+## Capture workflow
 
-1. Open the **Activation Duration** tab.
-2. Click anywhere on a row (not just the label) to select it.
-3. Tap the 📌 pin button to pin a duration — confirm the 3-pip counter increments.
-4. Pin 3 durations — confirm the oldest pin is dropped when a 4th is added.
-5. Open the right-click menu — confirm quick buttons reflect the current pins.
-6. Add a custom duration, set it as default, remove it, reset to defaults.
+1. Open mirror popover.
+2. Tap preview.
+3. On first capture, confirm save prompt appears.
+4. Save image and confirm file exists.
+5. Trigger capture again and confirm it saves directly to remembered folder.
 
-## Auto-Stop Notifications
+## Capture settings
 
-1. With a session active, enable Low Power Mode — confirm:
-   - Session stops immediately (< 2 s).
-   - A macOS notification "KeepMirror Stopped — Low Power Mode" appears.
-2. Set battery threshold above current battery — start a session — confirm:
-   - Session stops within 30 s.
-   - A macOS notification "KeepMirror Stopped — battery below threshold" appears.
+1. In Settings -> Capture, set format to PNG.
+2. Capture and confirm `.png` output.
+3. Repeat for JPEG and HEIF.
+4. Enable countdown (3s), capture, confirm countdown appears.
+5. Enable Copy to Clipboard, capture, confirm image is on clipboard.
+6. Enable Reveal in Finder, capture, confirm Finder opens selected file.
 
-## About
+## Mic check
 
-1. Open the **About** tab.
-2. Confirm the GitHub button opens the project repository.
-3. Confirm no Quit button is present on this tab (only appears on Settings / Duration tabs).
+1. In Settings -> Mic Check, enable mic check.
+2. If needed, grant microphone permission.
+3. Click Test Now and speak.
+4. Confirm live meter reacts.
+5. Change sensitivity and confirm responsiveness changes.
+6. Stop test and confirm mic monitor stops.
+
+## Notch mode (notch-capable Macs only)
+
+1. Enable Open Mirror from Notch.
+2. Hover cursor into notch trigger area.
+3. Confirm floating notch panel appears.
+4. Move cursor out and confirm panel hides.
+5. Optionally enable Hide Menu Bar Icon and confirm icon visibility updates.
+
+## Hotkey
+
+1. Use default Command+Shift+M.
+2. Confirm it toggles the mirror popover.
+3. Record a custom hotkey in Settings.
+4. Confirm new hotkey toggles and old hotkey no longer does.
+
+## Start at login
+
+1. Enable Start at Login.
+2. Quit app.
+3. Sign out and sign back in (or reboot).
+4. Confirm KeepMirror starts automatically.

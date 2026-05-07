@@ -1,13 +1,22 @@
-# KeepMirror Migration Baseline
+# Documentation Baseline
 
-KeepMirror was bootstrapped from the tracked KeepMirror snapshot at commit:
+This file records the documentation alignment baseline for KeepMirror.
 
-- Source repository: `../KeepMirror`
-- Source commit: `b4b5710f6edcff8cd335b86f8b7b7efee6cd11e9`
-- Source branch at extraction time: `master`
-- Extraction method: `git archive` (tracked files only)
+## Baseline date
 
-## Notes
+- May 7, 2026
 
-- No uncommitted KeepMirror working-tree changes were copied.
-- This repository starts with a fresh git history on `main`.
+## Scope
+
+Docs were refreshed to match the current app behavior:
+
+- menu bar camera mirror workflow
+- popover and notch mirror modes
+- capture pipeline (PNG/JPEG/HEIF + optional countdown)
+- optional mic level monitoring
+- camera/microphone permission model
+
+## Exclusions
+
+- `future-features.md` intentionally left unchanged
+- license text intentionally unchanged

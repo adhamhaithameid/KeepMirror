@@ -5,135 +5,95 @@
 <h1 align="center">KeepMirror</h1>
 
 <p align="center">
-  <strong>Your Mac, wide awake — for exactly as long as you need.</strong>
+  <strong>A fast menu bar mirror for macOS with one-tap snapshots and optional mic level check.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/adhamhaithameid/KeepMirror/releases">⬇ Download</a> ·
+  <a href="https://github.com/adhamhaithameid/KeepMirror/releases">Download</a> ·
   <a href="docs/install-from-github.md">Install Guide</a> ·
   <a href="docs/faq.md">FAQ</a> ·
   <a href="docs/privacy.md">Privacy</a>
+</p>
+
+<p align="center">
+  <a href="https://buymeacoffee.com/adhamhaithameid">
+    <img alt="Buy Me a Coffee" src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000" />
+  </a>
 </p>
 
 ---
 
 ## What is KeepMirror?
 
-KeepMirror is a tiny macOS app that lives in your menu bar. One click keeps your Mac awake for as long as you choose — no fiddling with System Settings, no idle caffeine scripts, no full app windows cluttering your screen.
+KeepMirror is a native macOS menu bar app that opens a floating camera mirror instantly.
 
-It's for the moments that matter:
+It is designed for quick real-world moments:
 
-- Your **presentation** is running and you can't have the screen go dark mid-slide.
-- A **large file upload or download** is running and you need the Mac to stay on.
-- You're **screen sharing** and macOS keeps dimming your display at the worst time.
-- You stepped away and need Time Machine or a sync job to **finish uninterrupted**.
+- check your camera framing before a call
+- quickly inspect your look before recording
+- monitor your microphone level while speaking
+- capture clean snapshots without opening a full camera app
 
-When your session ends, KeepMirror gets out of the way. Your Mac goes back to its normal sleep schedule automatically.
+The app stays lightweight, local, and out of the way.
 
----
+## Core features
 
-## How to use it
+- Fast popover mirror from the menu bar
+- One-tap (or Space key) photo capture
+- Optional capture countdown (Off, 3s, 5s)
+- Save as PNG, JPEG, or HEIF
+- Optional copy to clipboard and reveal in Finder after capture
+- Optional live mic level badge with sensitivity controls
+- Notch hover mode on notch-enabled Macs
+- Global hotkey (default: Command+Shift+M)
+- Start at login support
 
-### Starting a session
+## How it works
 
-| Action | What happens |
-|---|---|
-| **Left click** the ☕ icon | Starts your default duration instantly |
-| **⌥ Option + click** the icon | Same as left click — fastest way to start |
-| **Right click** the icon | Opens the menu with duration buttons and all options |
-| **Click a duration button** (15m, 1h, ∞ …) | Starts a session for that exact duration |
+1. Launch `KeepMirror.app`.
+2. Click the menu bar icon to open the mirror.
+3. Tap the preview (or press Space) to capture a photo.
+4. Use the settings gear for camera, capture, mic, notch, and hotkey preferences.
 
-### Stopping a session
+Right-click the menu bar icon for quick actions: open mirror, open settings, quit.
 
-- Click the red **Stop Session** button inside the menu, or
-- Left click the icon again (when a session is already running), or
-- Wait — KeepMirror stops automatically when the time is up.
+## Permissions
 
-### Reading the status at a glance
+KeepMirror uses only the permissions needed for its features:
 
-The menu bar icon tells you everything:
+- Camera: required for mirror preview and captures
+- Microphone: optional, only for mic level meter
 
-| Icon | Meaning |
-|---|---|
-| ☕ (outline) | Inactive — your Mac sleeps normally |
-| ☕ (filled) | Active — your Mac is being kept awake |
-| ☕ **42m** | Active, 42 minutes left in this session |
+KeepMirror does not request Accessibility, Input Monitoring, or Screen Recording.
 
-Open the menu and you'll see a live countdown with a depleting progress ring, the remaining time down to the second, and your current battery level if a threshold is set.
-
----
-
-## Key features
-
-### ⏱ Flexible session lengths
-Choose from built-in options: `15m`, `30m`, `1h`, `2h`, `3h`, `5h`, `8h`, `12h`, `1 day`, or `Indefinitely`. Add your own custom durations in Settings anytime.
-
-### 🔋 Battery-aware
-Set a battery percentage threshold and KeepMirror will stop automatically when your battery drops below it. Optionally, it also stops the moment **Low Power Mode** turns on.
-
-### 🌙 Automation — hands-free activation
-- **Focus Mode** — KeepMirror can activate automatically whenever you turn on Focus or Do Not Disturb, so presentations and deep-work sessions always stay awake.
-- **Screen Sharing** — detects when you start screen sharing (or AirPlay mirroring) and activates immediately. No clicks needed.
-
-### 💤 Allow Power Nap
-Running a long backup or iCloud sync? Enable **Allow Power Nap** and KeepMirror keeps your Mac awake without blocking background tasks like Time Machine, push email, and iCloud Drive.
-
-### 🖥 Optional display control
-By default, KeepMirror keeps the system awake but lets the display sleep normally. Turn off **Allow Display Sleep** if you need the screen to stay on too.
-
-### 🔔 Notifications
-KeepMirror taps you on the shoulder 5 minutes before a session ends, with an **Extend +30m** button right in the notification. Auto-stop events (Low Power Mode, battery threshold) also send a notification explaining why the session ended.
-
-### 🛡 Quit protection
-If you accidentally press ⌘Q while a session is running, KeepMirror asks you to confirm before quitting. Your presentation won't drop mid-slide.
-
----
-
-## Getting started
-
-1. Download the latest [release](https://github.com/adhamhaithameid/KeepMirror/releases).
-2. Drag `KeepMirror.app` into your **Applications** folder.
-3. Open it — the ☕ icon appears in your menu bar.
-4. Left-click to start your first session.
-
-> [!TIP]
-> macOS may warn about an unidentified developer on first launch. Right-click `KeepMirror.app`, choose **Open**, then confirm **Open** in the dialog that appears. You only need to do this once.
-
-> [!TIP]
-> To have KeepMirror start every time you log in, open Settings (right-click the icon → Settings…) and turn on **Start at Login**.
-
----
+See [Permissions](docs/permissions.md) for details.
 
 ## Privacy
 
-KeepMirror has no internet connection, no analytics, no tracking, and no accounts.
+KeepMirror runs locally on your Mac and does not include analytics, tracking, or account services.
 
-It does **not** require:
-- Accessibility access
-- Input Monitoring
-- Screen Recording
-
-The only permission it may ask for is **notifications** (optional), so it can alert you when a session is ending.
-
-The only OS prompt you'll see otherwise is the standard login-item approval if you enable **Start at Login**.
-
----
+See [Privacy](docs/privacy.md).
 
 ## Documentation
 
-| Guide | What's inside |
-|---|---|
-| [Install Guide](docs/install-from-github.md) | Download, install, and first launch |
-| [FAQ](docs/faq.md) | Common questions answered |
-| [Safety](docs/safety.md) | How auto-stop protects your battery |
-| [Troubleshooting](docs/troubleshooting.md) | Fixes for common issues |
-| [Privacy](docs/privacy.md) | Full data and permissions statement |
-| [Manual Testing](docs/manual-testing.md) | Verify the app is working correctly |
-| [Future Features](future-features.md) | Planned roadmap items for upcoming versions |
-| [Uninstall](docs/uninstall.md) | Fully remove KeepMirror |
+- [Install Guide](docs/install-from-github.md)
+- [FAQ](docs/faq.md)
+- [Safety](docs/safety.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Permissions](docs/permissions.md)
+- [Architecture](docs/architecture.md)
+- [Manual Testing](docs/manual-testing.md)
+- [Uninstall](docs/uninstall.md)
+- [Future Features](future-features.md)
 
----
+## Build and release helpers
+
+- `./script/build_and_run.sh`
+- `./script/run_logic_checks.sh`
+- `./script/run_release_checks.sh`
+- `./script/make_installers.sh`
+- `./script/notarize_release.sh`
 
 ## License
 
-Source-available under the [PolyForm Noncommercial 1.0.0](LICENSE.md) license.
+Source-available under [PolyForm Noncommercial 1.0.0](LICENSE.md).

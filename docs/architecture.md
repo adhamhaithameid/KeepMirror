@@ -1,59 +1,108 @@
 # Architecture
 
-KeepMirror is a menu bar utility built around macOS power assertions.
+KeepMirror is a menu bar camera mirror app built with AppKit + SwiftUI + AVFoundation.
 
-## Core Pieces
+## Runtime overview
 
-### `WakeAssertionController`
+- `AppDelegate` creates the app environment at launch.
+- `AppEnvironment.makeEnvironment()` wires dependencies.
+- `MirrorController` coordinates app-level behavior.
+- `StatusItemController` owns the menu bar item, popover lifecycle, and right-click menu.
 
-Creates and releases IOKit power assertions that prevent system and/or display sleep.
+The app runs as an accessory app (`LSUIElement = true`), so there is no Dock icon.
 
-### `ActivationSessionController`
+## Core components
 
-Tracks the active session, runs a timed expiration task, and monitors power conditions via:
-- A **30-second poll** for battery level and Low Power Mode.
-- A **reactive `NSProcessInfoPowerStateDidChange` notification observer** that reacts to Low Power Mode changes within milliseconds — no waiting for the next poll.
+### `MirrorController`
 
-When a session is stopped automatically the controller sets `lastStopReason` so `KeepMirrorController` can fire a system notification.
+Main orchestration layer.
 
-### `NotificationManager`
+Responsibilities:
 
-Wraps `UNUserNotificationCenter`. Requests notification permission at launch and delivers an alert+sound when a session is stopped automatically (Low Power Mode, battery threshold, or expiry). Manual stops are silent.
+- launch flow and onboarding gate
+- start/stop camera session requests
+- capture photo workflow (including save panel and bookmark persistence)
+- settings window routing
+- launch-at-login state syncing
+- hotkey manager integration
 
-### `AppSettings`
+### `MirrorSettings`
 
-Persists all user preferences to `UserDefaults`:
+`ObservableObject` backed by `UserDefaults`.
 
-| Key | Type | Notes |
-|-----|------|-------|
-| `activateOnLaunch` | Bool | Start default session on app launch |
-| `deactivateBelowThreshold` | Bool | Enable battery guard |
-| `batteryThreshold` | Int 1–100 | Any value; UI applies magnetic snapping near anchor points |
-| `deactivateOnLowPowerMode` | Bool | Reactive stop via notification |
-| `allowDisplaySleep` | Bool | Keep Mac awake / let display sleep |
-| `defaultDurationID` | String | ID of the left-click default duration |
-| `pinnedDurationIDs` | [String] | Up to 3 IDs shown as quick buttons in the menu |
+Persists preferences for:
 
-The battery threshold **slider is free-range (1–100%)** with *magnetic snap points* at 10, 20, 50, 70, and 90%. `AppSettings.applyMagneticSnap(_:)` implements the snapping logic.
+- mirror size, selected camera, mirror flip, quality preset
+- capture save bookmark, format, countdown, clipboard/finder behavior
+- mic check enablement, selected mic, sensitivity
+- notch hover behavior
+- start at login, capture flash
+- onboarding completion
+- global hotkey key code and modifiers
+
+### `CameraManager`
+
+Owns `AVCaptureSession` and `AVCaptureVideoPreviewLayer`.
+
+Key design points:
+
+- session mutation happens on a dedicated serial `sessionQueue`
+- published state is bridged to `@MainActor`
+- supports camera/mic device enumeration and live switching
+- supports still capture through `AVCapturePhotoOutput`
+- computes mic level from captured audio buffers
 
 ### `StatusItemController`
 
-Owns the NSStatusItem and drives all click behaviour:
+Owns `NSStatusItem` and `NSPopover`.
 
-| Click | Action |
-|-------|--------|
-| Left click | Toggle active/inactive (default duration) |
-| ⌥ Option + click | Activate default duration instantly (no menu) |
-| Right click / Ctrl + click | Open the pop-up menu |
+Responsibilities:
 
-The menu header (`MenuHeaderView`) is driven by `TimelineView(.periodic(from:by:1))` so the countdown and progress ring redraw every second without a manual timer. The `PulsingDot` uses a repeating `easeInOut` scale + expanding outer glow ring to feel alive.
+- click routing (left click toggle popover, right click context menu)
+- camera lifecycle on popover open/close
+- mic monitor lifecycle in popover mode
+- popover watchdog restart path for camera startup hiccups
+- menu bar icon visibility rules for notch mode
 
-When a session is active the menu also shows a **"Stop Now"** item directly below the header.
+### `NotchHoverMonitor`
+
+Tracks global mouse movement and detects cursor entry/exit in a notch trigger zone.
+
+- no keyboard interception
+- no click interception
+- no high-privilege permissions
+
+### `NotchPanelController`
+
+Manages a reusable non-activating floating panel under the notch.
+
+Responsibilities:
+
+- animated show/hide
+- panel camera lifecycle and mic monitor lifecycle
+- notch-only compact mirror rendering path
 
 ### `SettingsWindowManager`
 
-Creates one stable `NSHostingController` on init and reuses it for all subsequent `show()` calls so SwiftUI state and bindings are never torn down. Uses `orderFrontRegardless()` + `NSApp.activate` to reliably bring the window to front for `LSUIElement` (menu-bar-only) apps.
+Keeps one stable `NSHostingController` for settings.
 
-## Why No Special Permissions?
+This avoids SwiftUI state reset each time settings is opened.
 
-KeepMirror does not intercept input devices. It only manages sleep prevention, which requires only native power-management APIs (no Accessibility or Input Monitoring entitlements needed).
+### `GlobalHotkeyManager`
+
+Uses Carbon `EventHotKey` registration for a global toggle hotkey.
+
+Default shortcut: Command+Shift+M.
+
+## Data and permissions model
+
+- No app account system
+- No network dependency for core behavior
+- Camera permission is required for mirror preview and captures
+- Microphone permission is optional for live mic level meter
+
+KeepMirror does not require:
+
+- Accessibility
+- Input Monitoring
+- Screen Recording

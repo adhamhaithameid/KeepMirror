@@ -1,20 +1,33 @@
 # Permissions
 
-KeepMirror does **not** require Accessibility, Input Monitoring, or Screen Recording permissions.
+KeepMirror requests only the minimum permissions needed for active features.
 
-The app uses macOS power-management assertions to keep the system awake, which works without any of the high-privilege input-monitoring permissions some other utility apps need.
+## Required
 
-## What You Might Still See
+### Camera
 
-### Start At Login Approval
+Used to display your live mirror preview and capture photos.
 
-If you enable **Start at login**, macOS may show its normal background-item or login-item approval UI. That is expected and is handled by the operating system.
+Without Camera permission, KeepMirror cannot show video.
 
-### Battery And Power State
+## Optional
 
-If you enable battery-aware rules, KeepMirror reads:
+### Microphone
 
-- current battery percentage
-- Low Power Mode state
+Used only for the live mic level meter when Mic Check is enabled.
 
-This information stays local to your Mac and is used only to decide when to stop an active session.
+Without Microphone permission, mirror and photo capture still work.
+
+## Not required
+
+KeepMirror does not require:
+
+- Accessibility
+- Input Monitoring
+- Screen Recording
+
+## System prompts you may still see
+
+### Start at Login approval
+
+If you enable Start at Login, macOS may show standard background-item/login-item approval UI.

@@ -1,31 +1,52 @@
 # Troubleshooting
 
-## The menu bar icon does not appear
+## No menu bar icon appears
 
 1. Quit KeepMirror if it is running.
-2. Reopen `KeepMirror.app`.
-3. Check whether the app is hidden behind the menu bar notch or extra menu bar items.
+2. Reopen `KeepMirror.app` from Applications.
+3. Check macOS menu bar overflow/hidden item settings.
 
-## My Mac still goes to sleep
+## Popover opens but camera is blank
 
-1. Open **Settings**.
-2. Make sure **Allow Display Sleep** is turned **off** if you want the display to stay awake too.
-3. Make sure the current session is still active.
+1. Open Settings -> Privacy & Permissions.
+2. Confirm Camera permission is granted.
+3. Reopen mirror popover.
+4. If needed, restart KeepMirror.
 
-## The session stopped on its own
+## Camera permission was denied earlier
 
-Check whether either of these options is enabled:
+1. Open System Settings -> Privacy & Security -> Camera.
+2. Enable KeepMirror.
+3. Reopen the mirror.
 
-- **Deactivate Below Battery Threshold**
-- **Deactivate in Low Power Mode**
+## Mic meter does not react
 
-Either rule can end an active session automatically.
+1. Ensure Mic Check is enabled.
+2. Confirm Microphone permission is granted.
+3. Select the correct mic device in Settings.
+4. Click Test Now and speak near the mic.
 
-## Start At Login is not working
+## Captured photos are not where expected
 
-1. Open **Settings** and toggle **Start at Login** off and on again.
-2. Check macOS login-item approval settings if the system asks for confirmation.
+1. Open Settings -> Capture.
+2. Verify Save Location.
+3. Use Choose to set a new folder.
+4. If needed, Clear bookmark and capture again to re-prompt.
 
-## The menu opens but the settings window does not appear
+## Hotkey does not trigger
 
-Try choosing **Settings** again. If the window is already open behind other apps, macOS should bring it forward, but if it does not, quit and reopen KeepMirror.
+1. Confirm your hotkey in Settings.
+2. Record a new combination.
+3. Avoid combinations already used by macOS or other apps.
+
+## Notch hover does not open panel
+
+1. Confirm your Mac has a notch display.
+2. Enable Open Mirror from Notch in Settings.
+3. Move cursor into the top-center notch trigger zone.
+
+## Start at Login not working
+
+1. Toggle Start at Login off and on in Settings.
+2. Check macOS login/background items approvals.
+3. Restart and verify behavior.

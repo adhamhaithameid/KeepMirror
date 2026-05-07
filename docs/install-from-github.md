@@ -1,36 +1,43 @@
 # Install From GitHub
 
+## Requirements
+
+- macOS 13.0 or newer
+
 ## 1. Download
 
-Download the latest `KeepMirror` release from GitHub.
+Download the latest release from:
 
-## 2. Move To Applications
+- <https://github.com/adhamhaithameid/KeepMirror/releases>
+
+## 2. Move to Applications
 
 Drag `KeepMirror.app` into your Applications folder.
 
-## 3. Open The App
+## 3. First launch
 
-Open `KeepMirror.app` once. The app runs as a menu bar utility, so look for the coffee cup icon in the menu bar.
+Open `KeepMirror.app`.
 
-## 4. Start A Session
+The app runs in the menu bar (no Dock icon), so look for the KeepMirror icon near the clock.
 
-- Left-click the icon to start the saved default duration.
-- Right-click the icon to choose a different duration, open Settings, or quit.
+## 4. Grant permissions
 
-## 5. Optional Setup
+- Camera: required
+- Microphone: optional (only if you use mic check)
 
-Open **Settings** if you want to:
+KeepMirror can request these in-app, or you can grant them in:
 
-- start at login
-- activate on launch
-- stop automatically on low battery
-- stop automatically in Low Power Mode
-- allow the display to sleep while the Mac stays awake
+- System Settings -> Privacy & Security -> Camera
+- System Settings -> Privacy & Security -> Microphone
 
-## Unsigned App Warning
+## 5. Open mirror
 
-If macOS shows an unsigned-app warning:
+Click the menu bar icon to open the mirror popover.
+
+## Unsigned app warning (if shown)
+
+If macOS blocks launch:
 
 1. Right-click `KeepMirror.app`
-2. Choose **Open**
-3. Confirm **Open**
+2. Choose Open
+3. Confirm Open in the dialog

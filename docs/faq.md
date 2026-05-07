@@ -1,35 +1,42 @@
 # FAQ
 
-## Does KeepMirror keep only the display awake?
+## What does KeepMirror do?
 
-By default, no. KeepMirror keeps **both the Mac and the display awake**.
+KeepMirror opens a camera mirror from the menu bar and lets you capture snapshots quickly.
 
-If you enable **Allow Display Sleep** in Settings, the Mac stays awake while the display is allowed to sleep normally.
+## Does it record video?
+
+No. KeepMirror is a live mirror and still-photo capture utility.
 
 ## Does it need Accessibility or Input Monitoring?
 
-No. KeepMirror does not block input devices, so those permissions are not needed.
+No.
 
-## Can I choose my own default duration?
+## Which permissions does it use?
 
-Yes. Open **Settings → Activation Duration**, select a duration, then click **Set as Default**.
+- Camera: required for mirror preview and photos
+- Microphone: optional, only for mic level meter
 
-## Can I add my own durations?
+## Can I choose a different camera or microphone?
 
-Yes. The Activation Duration page lets you add durations using hours, minutes, and seconds.
+Yes. Open Settings and pick devices from the Camera and Microphone menus.
 
-## What happens if my battery gets low?
+## Can I save photos in different formats?
 
-If you enable **Deactivate Below Battery Threshold**, KeepMirror stops the active session automatically when the battery falls below your chosen threshold.
+Yes. PNG, JPEG, and HEIF are supported.
 
-## What happens in Low Power Mode?
+## Can I trigger capture with the keyboard?
 
-If you enable **Deactivate in Low Power Mode**, the app stops the active session automatically when Low Power Mode turns on.
+Yes. Press Space while the mirror is focused.
 
-## Can it start automatically when I log in?
+## Is there a global shortcut?
 
-Yes. Enable **Start at Login** in Settings.
+Yes. Default is Command+Shift+M, and you can record a custom one in Settings.
 
-## Does it stay in the Dock?
+## What is notch mode?
 
-No. KeepMirror is designed as a menu bar utility and normally runs without a Dock icon.
+On notch-enabled Macs, KeepMirror can open a floating mirror when you hover near the notch area.
+
+## Can it launch automatically when I sign in?
+
+Yes. Enable Start at Login in Settings.

@@ -1,39 +1,37 @@
 # Commit Workflow
 
-KeepMirror uses tracked git hooks to enforce small, clean commits and Conventional Commit messages.
+KeepMirror uses tracked git hooks to keep commits focused and messages consistent.
 
 ## One-time setup
-
-Run:
 
 ```bash
 ./script/setup-git-hooks.sh
 ```
 
-This sets `core.hooksPath` to `.githooks` for your local clone.
+This sets `core.hooksPath` to `.githooks` for your clone.
 
-## Commit rules
+## Rules enforced by hooks
 
-- Use Conventional Commits: `type(scope): summary`
-- Keep changes focused and small
-- Default staged-change limits:
-  - maximum staged files: `12`
-  - maximum changed lines (adds + deletes): `240`
+- Conventional Commit format:
+  - `type(scope): summary`
+- Default staged-size limits:
+  - max files: `12`
+  - max changed lines (adds + deletes): `240`
 
 Examples:
 
 ```text
-feat(menu): add pinned duration quick actions
-fix(settings): persist default duration id correctly
-docs(readme): update installation steps
+feat(capture): add heif export fallback
+fix(popover): stop camera before close animation
+docs(readme): refresh usage and permissions
 ```
 
-## Temporary bypass
+## One-off bypass
 
-If a one-off larger commit is absolutely required:
+If you intentionally need a larger commit:
 
 ```bash
 ALLOW_LARGE_COMMIT=1 git commit -m "chore(scope): summary"
 ```
 
-Use bypasses sparingly and return to small commits immediately.
+Use bypasses sparingly and return to small commits.
