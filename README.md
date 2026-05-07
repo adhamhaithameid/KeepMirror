@@ -129,6 +129,7 @@ The only OS prompt you'll see otherwise is the standard login-item approval if y
 | [Troubleshooting](docs/troubleshooting.md) | Fixes for common issues |
 | [Privacy](docs/privacy.md) | Full data and permissions statement |
 | [Manual Testing](docs/manual-testing.md) | Verify the app is working correctly |
+| [Future Features](future-features.md) | Planned roadmap items for upcoming versions |
 | [Uninstall](docs/uninstall.md) | Fully remove KeepMirror |
 
 ---
