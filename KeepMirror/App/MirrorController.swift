@@ -53,6 +53,11 @@ final class MirrorController: ObservableObject {
             launchAtLoginManager.isEnabled = settings.startAtLogin
         }
         seedDefaultDevicesIfNeeded()
+        if !settings.hasCompletedOnboarding {
+            openSettings(tab: .onboarding)
+            return
+        }
+
         _ = await cameraManager.requestCameraPermission()
 
         // Auto-enable mic check the first time mic permission is granted
@@ -64,6 +69,11 @@ final class MirrorController: ObservableObject {
                 settings.hasAutoEnabledMic = true
             }
         }
+    }
+
+    func completeOnboarding() {
+        settings.hasCompletedOnboarding = true
+        selectedTab = .settings
     }
 
     private func seedDefaultDevicesIfNeeded() {

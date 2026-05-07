@@ -1,6 +1,7 @@
 import Foundation
 
 enum AppTab: String, CaseIterable, Identifiable {
+    case onboarding
     case settings
     case about
 
@@ -8,6 +9,7 @@ enum AppTab: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
+        case .onboarding: "Onboarding"
         case .settings: "Settings"
         case .about:    "About"
         }
@@ -15,6 +17,7 @@ enum AppTab: String, CaseIterable, Identifiable {
 
     var icon: String {
         switch self {
+        case .onboarding: "sparkles"
         case .settings: "gearshape"
         case .about:    "info.circle"
         }

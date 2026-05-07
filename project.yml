@@ -47,6 +47,7 @@ targets:
       - path: KeepMirror/Views/NotchPanelController.swift
       - path: KeepMirror/Views/MirrorSettingsTabView.swift
       - path: KeepMirror/Views/HotkeyRecorderRow.swift
+      - path: KeepMirror/Views/OnboardingTabView.swift
       - path: KeepMirror/Views/SettingsWindowView.swift
       - path: KeepMirror/Views/AboutTabView.swift
       - path: KeepMirror/Views/KeepMirrorBranding.swift

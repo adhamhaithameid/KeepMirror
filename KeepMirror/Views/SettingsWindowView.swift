@@ -16,6 +16,8 @@ struct SettingsWindowView: View {
 
                 Group {
                     switch controller.selectedTab {
+                    case .onboarding:
+                        OnboardingTabView(controller: controller)
                     case .settings:
                         MirrorSettingsTabView(
                             controller: controller,
@@ -56,8 +58,12 @@ struct SettingsWindowView: View {
     }
 
     private var tabBar: some View {
-        HStack(spacing: 4) {
-            ForEach(AppTab.allCases) { tab in
+        let tabs: [AppTab] = controller.settings.hasCompletedOnboarding
+            ? [.settings, .about]
+            : [.onboarding, .settings, .about]
+
+        return HStack(spacing: 4) {
+            ForEach(tabs) { tab in
                 tabButton(for: tab)
             }
         }

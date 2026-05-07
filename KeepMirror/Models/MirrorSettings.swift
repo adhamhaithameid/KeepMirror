@@ -149,6 +149,7 @@ final class MirrorSettings: ObservableObject {
         // General
         static let startAtLogin        = "startAtLogin"
         static let showCaptureFlash    = "showCaptureFlash"
+        static let hasCompletedOnboarding = "hasCompletedOnboarding"
         // Hotkey
         static let hotkeyKeyCode       = "hotkeyKeyCode"
         static let hotkeyModifiers     = "hotkeyModifiers"
@@ -262,6 +263,12 @@ final class MirrorSettings: ObservableObject {
     var hasAutoEnabledMic: Bool {
         get { defaults.bool(forKey: Keys.hasAutoEnabledMic) }
         set { defaults.set(newValue, forKey: Keys.hasAutoEnabledMic) }
+    }
+
+    /// Set to true once first-run onboarding is completed.
+    var hasCompletedOnboarding: Bool {
+        get { defaults.bool(forKey: Keys.hasCompletedOnboarding) }
+        set { defaults.set(newValue, forKey: Keys.hasCompletedOnboarding) }
     }
 
     // MARK: - Init

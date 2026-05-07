@@ -32,6 +32,7 @@
 		AF7E2BDF99FB0F8AAF1BBD62 /* MirrorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF0B8F644F862202B7CF36 /* MirrorSettings.swift */; };
 		D14CCA3388D760356CD328B7 /* shutter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8507806F17241CD98C60A065 /* shutter.wav */; };
 		D21EFE9174B65AAA33C1209E /* SettingsWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */; };
+		D397C2C2A30DCB0AB22363C0 /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACD2AC4B51D01CACD6BEDB /* OnboardingTabView.swift */; };
 		D83228BB04BBDF7C27ACE464 /* MirrorPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDA568390B0C59197DEF615 /* MirrorPopoverView.swift */; };
 		D860D2D293FE28F39B7B72F2 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA919B7A33B06AB4875FD0D /* StatusItemController.swift */; };
 		DAF92795F8D4ECF441AF811E /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1D94945373457C5BE0453 /* profile.png */; };
@@ -93,6 +94,7 @@
 		BBF478022AE6F5CE23040257 /* LinkOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkOpening.swift; sourceTree = "<group>"; };
 		C01B9086CFBFC202491F7628 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C76F745ACB30F18FB9E76A56 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		CFACD2AC4B51D01CACD6BEDB /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
 		D243F105A0352CE1FE57AC88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA48E2499CDD091C7E858225 /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +224,7 @@
 				ADDA568390B0C59197DEF615 /* MirrorPopoverView.swift */,
 				2D9981FCDCAED142E423D060 /* MirrorSettingsTabView.swift */,
 				484A9A6904E6616213891267 /* NotchPanelController.swift */,
+				CFACD2AC4B51D01CACD6BEDB /* OnboardingTabView.swift */,
 				540BEE88DAA925D397F10A90 /* SettingsWindowView.swift */,
 			);
 			path = Views;
@@ -421,6 +424,7 @@
 				57C0B82FDAD47C9CC8305AD4 /* MirrorSettingsTabView.swift in Sources */,
 				34AF183CFD8A4A55B4273758 /* NotchHoverMonitor.swift in Sources */,
 				FD70294DE1B54A0DF5243973 /* NotchPanelController.swift in Sources */,
+				D397C2C2A30DCB0AB22363C0 /* OnboardingTabView.swift in Sources */,
 				84DEAD05367FE29A7D444F7D /* SettingsStore.swift in Sources */,
 				0E9EEF7FEAA9674A5DC4A90A /* SettingsWindowManager.swift in Sources */,
 				D21EFE9174B65AAA33C1209E /* SettingsWindowView.swift in Sources */,
