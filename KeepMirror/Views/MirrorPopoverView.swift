@@ -129,19 +129,21 @@ struct MirrorPopoverView: View {
         .background(SpaceKeyCapture { handleCaptureTrigger() })
         .onAppear {
             startPermCheckTimerIfNeeded()
-            startMicMonitorIfNeeded()
+            // Mic is started/stopped by StatusItemController — not here.
         }
         .onDisappear {
             permCheckTimer?.invalidate()
             permCheckTimer = nil
+            // Camera and mic stop are handled by StatusItemController.closePopover()
+            // as well, but keep camera stop as a fallback.
             controller.stopCamera()
-            micMonitor.stop()
         }
         .onChange(of: controller.cameraManager.micPermissionGranted) { granted in
-            if granted { startMicMonitorIfNeeded() }
+            // Mic lifecycle is driven by StatusItemController; permission
+            // changes are picked up on next open.
         }
         .onChange(of: controller.settings.micCheckEnabled) { enabled in
-            if enabled { startMicMonitorIfNeeded() } else { micMonitor.stop() }
+            if !enabled { micMonitor.stop() }
         }
     }
 
@@ -162,8 +164,6 @@ struct MirrorPopoverView: View {
         .padding(.top, 10)
     }
 
-    // MARK: - Mic startup
-
     // MARK: - Mic action
 
     private func handleMicBadgeTap() {
@@ -175,12 +175,6 @@ struct MirrorPopoverView: View {
                 }
             }
         }
-    }
-
-    private func startMicMonitorIfNeeded() {
-        guard controller.settings.micCheckEnabled,
-              controller.cameraManager.micPermissionGranted else { return }
-        micMonitor.start(gain: controller.settings.micSensitivity.gain)
     }
 
     // MARK: - Countdown
@@ -297,7 +291,8 @@ struct MirrorPopoverView: View {
                     permCheckTimer?.invalidate()
                     permCheckTimer = nil
                     controller.startCamera()
-                    startMicMonitorIfNeeded()
+                    // Mic start is owned by StatusItemController.openPopover() —
+                    // it will be started on the next open once permission is granted.
                 }
             }
         }
@@ -310,7 +305,7 @@ struct MirrorPopoverView: View {
                 if controller.cameraManager.micPermissionGranted {
                     permCheckTimer?.invalidate()
                     permCheckTimer = nil
-                    startMicMonitorIfNeeded()
+                    // Mic start is owned by StatusItemController.openPopover().
                 }
             }
         }
